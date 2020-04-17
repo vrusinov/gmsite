@@ -1067,7 +1067,10 @@ MARKDOWN_EXTENSIONS = [
 # (translatable)
 # SOCIAL_BUTTONS_CODE = """
 # <!-- Social buttons -->
-# <div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+# <div
+#   id="addthisbox"
+#   class="addthis_toolbox addthis_peekaboo_style addthis_default_style
+#          addthis_label_style addthis_32x32_style">
 # <a class="addthis_button_more">Share</a>
 # <ul><li><a class="addthis_button_facebook"></a>
 # <li><a class="addthis_button_google_plusone_share"></a>
@@ -1075,7 +1078,10 @@ MARKDOWN_EXTENSIONS = [
 # <li><a class="addthis_button_twitter"></a>
 # </ul>
 # </div>
-# <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+# <script
+# src="
+#  https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798">
+# </script>
 # <!-- End of social buttons -->
 # """
 
@@ -1145,7 +1151,8 @@ MARKDOWN_EXTENSIONS = [
 # If you prefer a Google search form, here's an example that should just work:
 # SEARCH_FORM = """
 # <!-- Google custom search -->
-# <form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
+# <form method="get" action="https://www.google.com/search"
+#  class="navbar-form navbar-right" role="search">
 # <div class="form-group">
 # <input type="text" name="q" class="form-control" placeholder="Search">
 # </div>
