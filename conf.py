@@ -1200,7 +1200,8 @@ MARKDOWN_EXTENSIONS = [
 #
 # An example re is the following:
 # '.*\/(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)-(?P<title>.*)\.rst'
-# (Note the '.*\/' in the beginning -- matches source paths relative to conf.py)
+# (Note the '.*\/' in the beginning -- matches source paths relative to
+# conf.py)
 # FILE_METADATA_REGEXP = None
 
 # Should titles fetched from file metadata be unslugified (made prettier?)
@@ -1223,7 +1224,8 @@ MARKDOWN_EXTENSIONS = [
 #     "rest_docinfo": {"summary": "description", "modified": "updated"},
 #     "markdown_metadata": {"summary": "description", "modified": "updated"}
 # }
-# Other examples: https://getnikola.com/handbook.html#mapping-metadata-from-other-formats
+# Other examples:
+# https://getnikola.com/handbook.html#mapping-metadata-from-other-formats
 
 # Map metadata between types/values. (Runs after METADATA_MAPPING.)
 # Supported formats: nikola, yaml, toml, rest_docinfo, markdown_metadata
@@ -1231,7 +1233,8 @@ MARKDOWN_EXTENSIONS = [
 # METADATA_VALUE_MAPPING = {}
 # Examples:
 # METADATA_VALUE_MAPPING = {
-#     "yaml": {"keywords": lambda value: ', '.join(value)},  # yaml: 'keywords' list -> str
+#     # yaml: 'keywords list -> str
+#     "yaml": {"keywords": lambda value: ', '.join(value)},
 #     "nikola": {
 #         "widgets": lambda value: value.split(', '),  # nikola: 'widgets' comma-separated string -> list
 #         "tags": str.lower  # nikola: force lowercase 'tags' (input would be string)
