@@ -375,8 +375,9 @@ CATEGORY_ALLOW_HIERARCHIES = False
 # output contains only the name of the leaf category and not the whole path.
 CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 
-# If CATEGORY_PAGES_ARE_INDEXES is set to True, each category's page will contain
-# the posts themselves. If set to False, it will be just a list of links.
+# If CATEGORY_PAGES_ARE_INDEXES is set to True, each category's page will
+# contain the posts themselves. If set to False, it will be just a list of
+# links.
 # CATEGORY_PAGES_ARE_INDEXES = False
 
 # Set descriptions for category pages to make them more interesting. The
@@ -385,7 +386,7 @@ CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 # CATEGORY_DESCRIPTIONS = {
 #    DEFAULT_LANG: {
 #        "blogging": "Meta-blog posts about blogging.",
-#        "open source": "My contributions to my many, varied, ever-changing, and eternal libre software projects."
+#        "open source": "My contributions to software projects."
 #    },
 # }
 
