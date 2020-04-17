@@ -269,7 +269,7 @@ COMPILERS = {
 # untranslated posts.
 # If this is set to False, then posts that are not translated to a language
 # LANG will not be visible at all in the pages in that language.
-# SHOW_UNTRANSLATED_POSTS = True
+SHOW_UNTRANSLATED_POSTS = False
 
 # Nikola supports logo display.  If you have one, you can put the URL here.
 # Final output is <img src="LOGO_URL" id="logo" alt="BLOG_TITLE">.
@@ -634,7 +634,8 @@ GITHUB_COMMIT_SOURCE = True
 # Executable for the "yui_compressor" filter (defaults to 'yui-compressor').
 # YUI_COMPRESSOR_EXECUTABLE = 'yui-compressor'
 
-# Executable for the "closure_compiler" filter (defaults to 'closure-compiler').
+# Executable for the "closure_compiler" filter (defaults to
+# 'closure-compiler').
 # CLOSURE_COMPILER_EXECUTABLE = 'closure-compiler'
 
 # Executable for the "optipng" filter (defaults to 'optipng').
@@ -652,7 +653,8 @@ GITHUB_COMMIT_SOURCE = True
 # ({hx} is replaced by headers h1 through h6).
 # You must change this if you use a custom theme that does not use
 # "e-content entry-content" as a class for post and page contents.
-# HEADER_PERMALINKS_XPATH_LIST = ['*//div[@class="e-content entry-content"]//{hx}']
+# HEADER_PERMALINKS_XPATH_LIST = [
+#   '*//div[@class="e-content entry-content"]//{hx}']
 # Include *every* header (not recommended):
 # HEADER_PERMALINKS_XPATH_LIST = ['*//{hx}']
 
@@ -664,7 +666,8 @@ GITHUB_COMMIT_SOURCE = True
 # side optimization for very high traffic sites or low memory servers.
 # GZIP_FILES = False
 # File extensions that will be compressed
-# GZIP_EXTENSIONS = ('.txt', '.htm', '.html', '.css', '.js', '.json', '.atom', '.xml')
+# GZIP_EXTENSIONS = ('.txt', '.htm', '.html', '.css', '.js', '.json', '.atom',
+#                    '.xml')
 # Use an external gzip command? None means no.
 # Example: GZIP_COMMAND = "pigz -k {filename}"
 # GZIP_COMMAND = None
