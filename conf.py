@@ -731,8 +731,8 @@ GITHUB_COMMIT_SOURCE = True
 # Embedded thumbnail information:
 # EXIF_WHITELIST['1st'] = ["*"]
 
-# If set to True, any ICC profile will be copied when an image is thumbnailed or
-# resized.
+# If set to True, any ICC profile will be copied when an image is thumbnailed
+# or resized.
 # PRESERVE_ICC_PROFILES = False
 
 # Folders containing images to be used in normal posts or pages.
@@ -749,9 +749,9 @@ GITHUB_COMMIT_SOURCE = True
 # See the Nikola Handbook for details (in the “Embedding Images” and
 # “Thumbnails” sections)
 
-# Images will be scaled down according to IMAGE_THUMBNAIL_SIZE and MAX_IMAGE_SIZE
-# options, but will have to be referenced manually to be visible on the site
-# (the thumbnail has ``.thumbnail`` added before the file extension by default,
+# Images will be scaled down according to IMAGE_THUMBNAIL_SIZE and
+# MAX_IMAGE_SIZE options, but will have to be referenced manually to be visible
+# on the site (the thumbnail has ``.thumbnail`` added before the file extension by default,
 # but a different naming template can be configured with IMAGE_THUMBNAIL_FORMAT).
 
 IMAGE_FOLDERS = {'images': 'images'}
