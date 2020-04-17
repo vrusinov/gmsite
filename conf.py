@@ -91,7 +91,7 @@ NAVIGATION_ALT_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "bootblog4"
+THEME = "bootblog4-jinja"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
@@ -273,7 +273,7 @@ SHOW_UNTRANSLATED_POSTS = False
 # Nikola supports logo display.  If you have one, you can put the URL here.
 # Final output is <img src="LOGO_URL" id="logo" alt="BLOG_TITLE">.
 # The URL may be relative to the site root.
-# LOGO_URL = ''
+LOGO_URL = ''
 
 # If you want to hide the title of your website (for example, if your logo
 # already contains the text), set this to False.
@@ -1324,7 +1324,8 @@ WARN_ABOUT_TAG_METADATA = False
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {}
+GLOBAL_CONTEXT = {
+}
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be
