@@ -962,7 +962,8 @@ STRIP_INDEXES = True
 # List of files relative to the server root (!) that will be asked to be
 # excluded  from indexing and other robotic spidering. * is supported. Will
 # only be effective if SITE_URL points to server root. The list is used to
-# exclude resources from /robots.txt and /sitemap.xml, and to inform search engines about /sitemapindex.xml.
+# exclude resources from /robots.txt and /sitemap.xml, and to inform search
+# engines about /sitemapindex.xml.
 # ROBOTS_EXCLUSIONS = ["/archive.html", "/category/*.html"]
 
 # Instead of putting files in <slug>.html, put them in <slug>/index.html.
@@ -1002,7 +1003,8 @@ PRETTY_URLS = True
 #         displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ],
 #         processEscapes: true
 #     },
-#     displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+#     displayAlign: 'center', // Change this to 'left' if you want left-aligned
+#       equations.
 #     "HTML-CSS": {
 #         styles: {'.MathJax_Display': {"margin": 0}}
 #     }
@@ -1020,7 +1022,8 @@ PRETTY_URLS = True
 # delimiters: [
 #     {left: "$$", right: "$$", display: true},
 #     {left: "\\\\[", right: "\\\\]", display: true},
-#     {left: "\\\\begin{equation*}", right: "\\\\end{equation*}", display: true},
+#     {left: "\\\\begin{equation*}", right: "\\\\end{equation*}",
+#      display: true},
 #     {left: "$", right: "$", display: false},
 #     {left: "\\\\(", right: "\\\\)", display: false}
 # ]
