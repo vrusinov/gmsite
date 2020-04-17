@@ -496,7 +496,8 @@ FRONT_INDEX_HEADER = {
 # Create year, month, and day archives each with a (long) list of posts
 # (overrides both CREATE_MONTHLY_ARCHIVE and CREATE_SINGLE_ARCHIVE)
 # CREATE_FULL_ARCHIVES = False
-# If monthly archives or full archives are created, adds also one archive per day
+# If monthly archives or full archives are created, adds also one archive per
+# day
 # CREATE_DAILY_ARCHIVE = False
 # Create previous, up, next navigation links for archives
 # CREATE_ARCHIVE_NAVIGATION = False
@@ -509,9 +510,9 @@ FRONT_INDEX_HEADER = {
 # ARCHIVE_PATH = ""
 # ARCHIVE_FILENAME = "archive.html"
 
-# If ARCHIVES_ARE_INDEXES is set to True, each archive page which contains a list
-# of posts will contain the posts themselves. If set to False, it will be just a
-# list of links.
+# If ARCHIVES_ARE_INDEXES is set to True, each archive page which contains a
+# list of posts will contain the posts themselves. If set to False, it will be
+# just a list of links.
 # ARCHIVES_ARE_INDEXES = False
 
 # URLs to other posts/pages can take 3 forms:
