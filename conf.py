@@ -162,6 +162,7 @@ POSTS = (
             ("posts/*.txt", "posts", "post.tmpl"),
             ("posts/*.rst", "posts", "post.tmpl"),
             ("posts/*.html", "posts", "post.tmpl"),
+            ("posts/*.md", "posts", "post.tmpl"),
             )
 PAGES = (
             ("articles/*.txt", "articles", "story.tmpl"),
@@ -782,24 +783,26 @@ IMAGE_FOLDERS = {'images': 'images'}
 # second-oldest posts, etc., and index.html has the newest posts. This ensures
 # that all posts on index-x.html will forever stay on that page, now matter how
 # many new posts are added.
-# If False, index-1.html has the second-newest posts, index-2.html the third-newest,
-# and index-n.html the oldest posts. When this is active, old posts can be moved
-# to other index pages when new posts are added.
+# If False, index-1.html has the second-newest posts, index-2.html the
+# third-newest, and index-n.html the oldest posts. When this is active, old
+# posts can be moved to other index pages when new posts are added.
 # INDEXES_STATIC = True
 #
-# (translatable) If PRETTY_URLS is set to True, this setting will be used to create
-# prettier URLs for index pages, such as page/2/index.html instead of index-2.html.
+# (translatable) If PRETTY_URLS is set to True, this setting will be used to
+# create prettier URLs for index pages, such as page/2/index.html instead of
+# index-2.html.
 # Valid values for this settings are:
 #   * False,
 #   * a list or tuple, specifying the path to be generated,
 #   * a dictionary mapping languages to lists or tuples.
-# Every list or tuple must consist of strings which are used to combine the path;
+# Every list or tuple must consist of strings which are used to combine the
+# path;
 # for example:
 #     ['page', '{number}', '{index_file}']
 # The replacements
 #     {number}     --> (logical) page number;
-#     {old_number} --> the page number inserted into index-n.html before (zero for
-#                      the main page);
+#     {old_number} --> the page number inserted into index-n.html before (zero
+#                      for the main page);
 #     {index_file} --> value of option INDEX_FILE
 # are made.
 # Note that in case INDEXES_PAGES_MAIN is set to True, a redirection will be created
@@ -837,7 +840,7 @@ IMAGE_FOLDERS = {'images': 'images'}
 # )
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
-# INDEX_TEASERS = False
+INDEX_TEASERS = True
 
 # HTML fragments with the Read more... links.
 # The following tags exist and are replaced for you:
