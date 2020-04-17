@@ -1,1 +1,0 @@
-<html><body><p>Некоторое время назад на один из моих серверов повалилась куча запросов с User-agent BTWebClient/1.0 и подобными. Запросов было насколько много, что сервер слег.<br><br>Решение оказалось очень простым:<br><br></p><pre class="brush: perl">if ($http_user_agent ~ BTWebClient) {<br>    return 503;<br>}<br></pre></body></html>
