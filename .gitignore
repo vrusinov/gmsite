@@ -1,4 +1,5 @@
 cache
 .doit.db
+.doit.db.bak
 __pycache__
 output
