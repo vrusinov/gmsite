@@ -351,7 +351,8 @@ HIDDEN_TAGS = ['mathjax']
 # output / TRANSLATION[lang] / CATEGORY_PATH / index.html (list of categories)
 # output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category.html
 #    (list of posts for a category)
-# output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category RSS_EXTENSION (RSS feed for a category)
+# output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category
+#   RSS_EXTENSION (RSS feed for a category)
 # (translatable)
 # CATEGORY_PATH = "categories"
 # CATEGORY_PREFIX = "cat_"
@@ -366,12 +367,12 @@ HIDDEN_TAGS = ['mathjax']
 
 # If CATEGORY_ALLOW_HIERARCHIES is set to True, categories can be organized in
 # hierarchies. For a post, the whole path in the hierarchy must be specified,
-# using a forward slash ('/') to separate paths. Use a backslash ('\') to escape
-# a forward slash or a backslash (i.e. '\//\\' is a path specifying the
+# using a forward slash ('/') to separate paths. Use a backslash ('\') to
+# escape a forward slash or a backslash (i.e. '\//\\' is a path specifying the
 # subcategory called '\' of the top-level category called '/').
 CATEGORY_ALLOW_HIERARCHIES = False
-# If CATEGORY_OUTPUT_FLAT_HIERARCHY is set to True, the output written to output
-# contains only the name of the leaf category and not the whole path.
+# If CATEGORY_OUTPUT_FLAT_HIERARCHY is set to True, the output written to
+# output contains only the name of the leaf category and not the whole path.
 CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 
 # If CATEGORY_PAGES_ARE_INDEXES is set to True, each category's page will contain
