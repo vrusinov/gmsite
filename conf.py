@@ -246,7 +246,7 @@ COMPILERS = {
 
 # Create by default posts in one file format?
 # Set to False for two-file posts, with separate metadata.
-# ONE_FILE_POSTS = True
+ONE_FILE_POSTS = False
 
 # Preferred metadata format for new posts
 # "Nikola": reST comments, wrapped in a HTML comment if needed (default)
@@ -254,7 +254,7 @@ COMPILERS = {
 # "TOML": TOML wrapped in "+++"
 # "Pelican": Native markdown metadata or reST docinfo fields. Nikola style for
 # other formats.
-# METADATA_FORMAT = "Nikola"
+METADATA_FORMAT = "Two-file"
 
 # Use date-based path when creating posts?
 # Can be enabled on a per-post basis with `nikola new_post -d`.
@@ -751,8 +751,9 @@ GITHUB_COMMIT_SOURCE = True
 
 # Images will be scaled down according to IMAGE_THUMBNAIL_SIZE and
 # MAX_IMAGE_SIZE options, but will have to be referenced manually to be visible
-# on the site (the thumbnail has ``.thumbnail`` added before the file extension by default,
-# but a different naming template can be configured with IMAGE_THUMBNAIL_FORMAT).
+# on the site (the thumbnail has ``.thumbnail`` added before the file extension
+# by default, but a different naming template can be configured with
+# IMAGE_THUMBNAIL_FORMAT).
 
 IMAGE_FOLDERS = {'images': 'images'}
 # IMAGE_THUMBNAIL_SIZE = 400
@@ -769,7 +770,8 @@ IMAGE_FOLDERS = {'images': 'images'}
 # (translatable) If the following is empty, defaults to BLOG_TITLE:
 # INDEXES_TITLE = ""
 #
-# (translatable) If the following is empty, defaults to ' [old posts,] page %d' (see above):
+# (translatable)
+# If the following is empty, defaults to ' [old posts,] page %d' (see above):
 # INDEXES_PAGES = ""
 #
 # If the following is True, INDEXES_PAGES is also displayed on the main (the
