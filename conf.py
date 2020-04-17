@@ -810,9 +810,10 @@ IMAGE_FOLDERS = {'images': 'images'}
 # (shorter) main page URL.
 # INDEXES_PRETTY_PAGE_URL = False
 #
-# If the following is true, a page range navigation will be inserted to indices.
-# Please note that this will undo the effect of INDEXES_STATIC, as all index pages
-# must be recreated whenever the number of pages changes.
+# If the following is true, a page range navigation will be inserted to
+# indices.
+# Please note that this will undo the effect of INDEXES_STATIC, as all index
+# pages must be recreated whenever the number of pages changes.
 # SHOW_INDEX_PAGE_NAVIGATION = False
 
 # If the following is True, a meta name="generator" tag is added to pages. The
@@ -846,7 +847,8 @@ INDEX_TEASERS = True
 # The following tags exist and are replaced for you:
 # {link}                        A link to the full post page.
 # {read_more}                   The string “Read more” in the current language.
-# {reading_time}                An estimate of how long it will take to read the post.
+# {reading_time}                An estimate of how long it will take to read
+#                               the post.
 # {remaining_reading_time}      An estimate of how long it will take to read the post, sans the teaser.
 # {min_remaining_read}          The string “{remaining_reading_time} min remaining to read” in the current language.
 # {paragraph_count}             The amount of paragraphs in the post.
