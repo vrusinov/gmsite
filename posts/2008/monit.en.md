@@ -23,4 +23,69 @@ Let's try to install and configure Monit:
 emerge -av monit
 ```
 
-And here are some config examples:<br><br>/etc/monitrc <br><pre class="brush: bash">set daemon  120 # check every 2 minutes<br>set logfile syslog facility log_daemon<br><br>set mailserver localhost<br>set eventqueue # use event queue is case mail server is unreachable<br>    basedir /var/monit<br>    slots 10<br>set mail-format { from: monit@ myserver.com }<br>set alert admin1 admin2 # list of alert revievers<br><br># internal httpd configuration<br>set httpd port 2812 and<br>    use address 0.0.0.0<br>    allow 1.2.3.4<br>    allow admin:password<br><br>include /etc/monit.d/*<br></pre><br>/etc/monit.d/system <br><pre class="brush: bash"># overall OS resources checking<br>check system myserver<br>    if loadavg (1min) &gt; 30 then alert<br>    if loadavg (5min) &gt; 20 then alert<br>    if memory usage &gt; 75% then alert<br>   if cpu usage (user) &gt; 70% then alert<br></pre><br><pre class="brush: bash"># apache2:<br>check process apache with pidfile /var/run/apache2.pid<br>    start program = "/etc/init.d/apache2 start"<br>    stop program  = "/etc/init.d/apache2 stop"<br>    if totalmem &gt; 500.0 MB for 5 cycles then restart<br>    if children &gt; 250 then restart<br>    if loadavg(5min) greater than 30 for 8 cycles then stop<br>    if failed host myserver.com port 80 protocol http<br>       and request "/index.html"<br>       then restart<br>    if failed port 443 type tcpssl protocol http<br>       with timeout 15 seconds<br>       then restart<br>    if 3 restarts within 5 cycles then timeout<br></pre><br><pre class="brush: bash"># file system:<br>check device data with path /dev/sdb1<br>    start program  = "/bin/mount /data"<br>    stop program  = "/bin/umount /data"<br>    if space usage &gt; 80% for 5 times within 15 cycles then alert<br>    if inode usage &gt; 80% then alert<br>    group server<br></pre><h2>Links</h2><ul><li><a href="http://mmonit.com/monit/">monit official site</a></li><li> <a href="http://mmonit.com/">M/Monit</a></li></ul>
+And here are some config examples:
+
+/etc/monitrc:
+
+```
+set daemon  120 # check every 2 minutes
+set logfile syslog facility log_daemon
+
+set mailserver localhost
+set eventqueue # use event queue is case mail server is unreachable
+    basedir /var/monit
+    slots 10
+set mail-format { from: monit@ myserver.com }
+set alert admin1 admin2 # list of alert revievers
+
+# internal httpd configuration
+set httpd port 2812 and
+    use address 0.0.0.0
+    allow 1.2.3.4
+    allow admin:password
+
+include /etc/monit.d/*
+```
+
+/etc/monit.d/system
+
+```perl
+# overall OS resources checking
+check system myserver
+    if loadavg (1min) > 30 then alert
+    if loadavg (5min) > 20 then alert
+    if memory usage > 75% then alert
+    if cpu usage (user) > 70% then alert
+```
+
+/etc/monit.d/apache2:
+
+```perl
+check process apache with pidfile /var/run/apache2.pid
+    start program = "/etc/init.d/apache2 start"
+    stop program  = "/etc/init.d/apache2 stop"
+    if totalmem > 500.0 MB for 5 cycles then restart
+    if children > 250 then restart
+    if loadavg(5min) greater than 30 for 8 cycles then stop
+    if failed host myserver.com port 80 protocol http
+       and request "/index.html"
+       then restart
+    if failed port 443 type tcpssl protocol http
+       with timeout 15 seconds
+       then restart
+    if 3 restarts within 5 cycles then timeout
+```
+
+/etc/monit.d/fs:
+
+```perl
+# file system:
+check device data with path /dev/sdb1
+    start program  = "/bin/mount /data"
+    stop program  = "/bin/umount /data"
+    if space usage > 80% for 5 times within 15 cycles then alert
+    if inode usage > 80% then alert
+    group server
+```
+
+<h2>Links</h2><ul><li><a href="http://mmonit.com/monit/">monit official site</a></li><li> <a href="http://mmonit.com/">M/Monit</a></li></ul>

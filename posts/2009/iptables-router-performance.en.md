@@ -3,7 +3,7 @@ Original: [Iptables – производительность роутера](htt
 
 Incorrect iptables settings may cause poor router performance. I'll show you how can you improve iptables performance
 
-## Disable connection tracking
+# Disable connection tracking
 
 The first thing you need to do (if you are not using NAT) is to disable connection tracking in nat table, PREROUTING chain:
 ```Bash
@@ -11,7 +11,7 @@ iptables -A PREROUTING -j NOTRACK
 ```
 Notice that if you have rules with match module, you'll have to change them to avoid match module. Also, all rules using conntrack will stop working.
 
-## Place 'hottest' rules to the top
+# Place 'hottest' rules to the top
 
 <!-- TEASER_END -->
 
