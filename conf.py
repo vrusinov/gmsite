@@ -805,9 +805,9 @@ IMAGE_FOLDERS = {'images': 'images'}
 #                      for the main page);
 #     {index_file} --> value of option INDEX_FILE
 # are made.
-# Note that in case INDEXES_PAGES_MAIN is set to True, a redirection will be created
-# for the full URL with the page number of the main page to the normal (shorter) main
-# page URL.
+# Note that in case INDEXES_PAGES_MAIN is set to True, a redirection will be
+# created for the full URL with the page number of the main page to the normal
+# (shorter) main page URL.
 # INDEXES_PRETTY_PAGE_URL = False
 #
 # If the following is true, a page range navigation will be inserted to indices.
