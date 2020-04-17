@@ -1,6 +1,11 @@
 Monit is a simple, lightweight, but useful and powerful enough monitoring solution for your servers.
 
-Monit can monitor: <br><ul><li>OS processes (presence, resources)</li><li>files, dirs and file system for changes (mtime, size and checksum changes)</li><li>network hosts (ping, tcp connections)</li></ul>Monit can notify administrator via configurable e-mail messages. It also can automatically restart failed service.<br>Monit have embedded web-server which allows to view state on monitoring objects and disable or enable them.<br><br>Of course, enterprise-class monitoring systems have much more features, but sometimes they are too complex and unstable.
+Monit can monitor:
+*   OS processes (presence, resources)
+*   files, dirs and file system for changes (mtime, size and checksum changes)
+*   network hosts (ping, tcp connections)
+
+Monit can notify administrator via configurable e-mail messages. It also can automatically restart failed service.<br>Monit have embedded web-server which allows to view state on monitoring objects and disable or enable them.<br><br>Of course, enterprise-class monitoring systems have much more features, but sometimes they are too complex and unstable.
 
 <!-- TEASER_END -->
 
