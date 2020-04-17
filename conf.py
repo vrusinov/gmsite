@@ -16,79 +16,19 @@ import time
 
 
 # Data about this site
-BLOG_AUTHOR = "Unknown"  # (translatable)
-BLOG_TITLE = "Зеленое Мышко"  # (translatable)
+BLOG_AUTHOR = "Vladimir Rusinov"  # (translatable)
+BLOG_TITLE = {
+    'ru': "Зеленое Мышко",
+    'en': 'GM'
+}
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "http://blog-ru.greenmice.info/"
+SITE_URL = "https://greenmice.info/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "http://blog-ru.greenmice.info/"
-BLOG_EMAIL = "noreply@blogger.com"
+BASE_URL = "/"
+BLOG_EMAIL = "vladimir.rusinov@gmail.com"
 BLOG_DESCRIPTION = ""  # (translatable)
-
-# Nikola is multilingual!
-#
-# Currently supported languages are:
-#
-# en        English
-# af        Afrikaans
-# ar        Arabic
-# az        Azerbaijani
-# bg        Bulgarian
-# bs        Bosnian
-# ca        Catalan
-# cs        Czech [ALTERNATIVELY cz]
-# da        Danish
-# de        German
-# el        Greek [NOT gr]
-# eo        Esperanto
-# es        Spanish
-# et        Estonian
-# eu        Basque
-# fa        Persian
-# fi        Finnish
-# fr        French
-# fur       Friulian
-# gl        Galician
-# he        Hebrew
-# hi        Hindi
-# hr        Croatian
-# hu        Hungarian
-# ia        Interlingua
-# id        Indonesian
-# it        Italian
-# ja        Japanese [NOT jp]
-# ko        Korean
-# lt        Lithuanian
-# ml        Malayalam
-# nb        Norwegian (Bokmål)
-# nl        Dutch
-# pa        Punjabi
-# pl        Polish
-# pt        Portuguese
-# pt_br     Portuguese (Brazil)
-# ru        Russian
-# sk        Slovak
-# sl        Slovene
-# sq        Albanian
-# sr        Serbian (Cyrillic)
-# sr_latin  Serbian (Latin)
-# sv        Swedish
-# te        Telugu
-# th        Thai
-# tr        Turkish [NOT tr_TR]
-# uk        Ukrainian
-# ur        Urdu
-# vi        Vietnamese
-# zh_cn     Chinese (Simplified)
-# zh_tw     Chinese (Traditional)
-#
-# If you want to use Nikola with a non-supported language you have to provide
-# a module containing the necessary translations
-# (cf. the modules at nikola/data/themes/base/messages/).
-# If a specific post is not translated to a language, then the version
-# in the default language will be shown instead.
 
 # What is the default language?
 DEFAULT_LANG = "en"
@@ -97,9 +37,9 @@ DEFAULT_LANG = "en"
 # The format is {"translationcode" : "path/to/translation" }
 # the path will be used as a prefix for the generated pages location
 TRANSLATIONS = {
-    DEFAULT_LANG: "",
+    DEFAULT_LANG: "./en",
     # Example for another language:
-    # "es": "./es",
+    "ru": "./ru",
 }
 
 # What will translated input files be named like?
@@ -251,7 +191,8 @@ TIMEZONE = "UTC"
 # You can also use 'full', 'long', 'medium', or 'short'
 # DATE_FORMAT = 'yyyy-MM-dd HH:mm'
 
-# Date format used to display post dates, if local dates are used. (translatable)
+# Date format used to display post dates, if local dates are used.
+# (translatable)
 # Used by moment.js: https://momentjs.com/docs/#/displaying/format/
 # JS_DATE_FORMAT = 'YYYY-MM-DD HH:mm'
 
@@ -297,8 +238,10 @@ COMPILERS = {
 
 
 # Enable reST directives that insert the contents of external files such
-# as "include" and "raw." This maps directly to the docutils file_insertion_enabled
-# config. See: http://docutils.sourceforge.net/docs/user/config.html#file-insertion-enabled
+# as "include" and "raw." This maps directly to the docutils
+# file_insertion_enabled
+# config. See:
+# http://docutils.sourceforge.net/docs/user/config.html#file-insertion-enabled
 # REST_FILE_INSERTION_ENABLED = True
 
 # Create by default posts in one file format?
@@ -309,7 +252,8 @@ COMPILERS = {
 # "Nikola": reST comments, wrapped in a HTML comment if needed (default)
 # "YAML": YAML wrapped in "---"
 # "TOML": TOML wrapped in "+++"
-# "Pelican": Native markdown metadata or reST docinfo fields. Nikola style for other formats.
+# "Pelican": Native markdown metadata or reST docinfo fields. Nikola style for
+# other formats.
 # METADATA_FORMAT = "Nikola"
 
 # Use date-based path when creating posts?
@@ -342,7 +286,8 @@ COMPILERS = {
 # Final locations are:
 # output / TRANSLATION[lang] / TAG_PATH / index.html (list of tags)
 # output / TRANSLATION[lang] / TAG_PATH / tag.html (list of posts for a tag)
-# output / TRANSLATION[lang] / TAG_PATH / tag RSS_EXTENSION (RSS feed for a tag)
+# output / TRANSLATION[lang] / TAG_PATH / tag RSS_EXTENSION (RSS feed for a
+#   tag)
 # (translatable)
 # TAG_PATH = "categories"
 
@@ -364,7 +309,8 @@ COMPILERS = {
 # TAG_DESCRIPTIONS = {
 #    DEFAULT_LANG: {
 #        "blogging": "Meta-blog posts about blogging.",
-#        "open source": "My contributions to my many, varied, ever-changing, and eternal libre software projects."
+#        "open source": "My contributions to my many, varied, ever-changing,
+#            and eternal libre software projects."
 #    },
 # }
 
@@ -403,7 +349,8 @@ HIDDEN_TAGS = ['mathjax']
 
 # Final locations are:
 # output / TRANSLATION[lang] / CATEGORY_PATH / index.html (list of categories)
-# output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category.html (list of posts for a category)
+# output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category.html
+#    (list of posts for a category)
 # output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category RSS_EXTENSION (RSS feed for a category)
 # (translatable)
 # CATEGORY_PATH = "categories"
