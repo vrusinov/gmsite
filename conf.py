@@ -420,7 +420,8 @@ HIDDEN_CATEGORIES = []
 
 # If True, the prefix will be trimmed from the category name, eg. if the
 # POSTS destination is "foo/bar", and the path is "foo/bar/baz/quux",
-# the category will be "baz/quux" (or "baz" if only the first directory is considered).
+# the category will be "baz/quux" (or "baz" if only the first directory is
+# considered).
 # Note that prefixes coming from translations are always ignored.
 # CATEGORY_DESTPATH_TRIM_PREFIX = False
 
@@ -450,8 +451,10 @@ HIDDEN_CATEGORIES = []
 
 # Path to author pages. Final locations are:
 # output / TRANSLATION[lang] / AUTHOR_PATH / index.html (list of authors)
-# output / TRANSLATION[lang] / AUTHOR_PATH / author.html (list of posts by an author)
-# output / TRANSLATION[lang] / AUTHOR_PATH / author RSS_EXTENSION (RSS feed for an author)
+# output / TRANSLATION[lang] / AUTHOR_PATH / author.html (list of posts by an
+#   author)
+# output / TRANSLATION[lang] / AUTHOR_PATH / author RSS_EXTENSION (RSS feed for
+#  an author)
 # (translatable)
 # AUTHOR_PATH = "authors"
 
