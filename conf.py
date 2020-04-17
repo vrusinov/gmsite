@@ -1236,8 +1236,10 @@ MARKDOWN_EXTENSIONS = [
 #     # yaml: 'keywords list -> str
 #     "yaml": {"keywords": lambda value: ', '.join(value)},
 #     "nikola": {
-#         "widgets": lambda value: value.split(', '),  # nikola: 'widgets' comma-separated string -> list
-#         "tags": str.lower  # nikola: force lowercase 'tags' (input would be string)
+#         # nikola: 'widgets' comma-separated string -> list
+#         "widgets": lambda value: value.split(', '),
+#         # nikola: force lowercase 'tags' (input would be string)
+#         "tags": str.lower
 #      }
 # }
 
@@ -1253,7 +1255,8 @@ MARKDOWN_EXTENSIONS = [
 # You can specify the card type by using the `card` parameter in TWITTER_CARD.
 # TWITTER_CARD = {
 #     # 'use_twitter_cards': True,  # enable Twitter Cards
-#     # 'card': 'summary',          # Card type, you can also use 'summary_large_image',
+#     # 'card': 'summary',          # Card type, you can also use
+#                                   # 'summary_large_image',
 #                                   # see https://dev.twitter.com/cards/types
 #     # 'site': '@website',         # twitter nick for the website
 #     # 'creator': '@username',     # Username for the content creator / author.
