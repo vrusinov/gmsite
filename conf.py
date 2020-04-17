@@ -1,18 +1,16 @@
 # -*- coding: utf-8 -*-
+"""This is the configuration of Nikola.
+
+Some settings can be different in different languages.
+A comment stating (translatable) is used to denote those.
+There are two ways to specify a translatable setting:
+(a) BLOG_TITLE = "My Blog"
+(b) BLOG_TITLE = {"en": "My Blog", "es": "Mi Blog"}
+Option (a) is used when you don't want that setting translated.
+Option (b) is used for settings that are different in different languages.
+"""
 
 import time
-
-# !! This is the configuration of Nikola. !! #
-# !!  You should edit it to your liking.  !! #
-
-
-# ! Some settings can be different in different languages.
-# ! A comment stating (translatable) is used to denote those.
-# ! There are two ways to specify a translatable setting:
-# ! (a) BLOG_TITLE = "My Blog"
-# ! (b) BLOG_TITLE = {"en": "My Blog", "es": "Mi Blog"}
-# ! Option (a) is used when you don't want that setting translated.
-# ! Option (b) is used for settings that are different in different languages.
 
 
 # Data about this site
@@ -1259,7 +1257,8 @@ MARKDOWN_EXTENSIONS = [
 #                                   # 'summary_large_image',
 #                                   # see https://dev.twitter.com/cards/types
 #     # 'site': '@website',         # twitter nick for the website
-#     # 'creator': '@username',     # Username for the content creator / author.
+#     # 'creator': '@username',     # Username for the content creator /
+#                                   # author.
 # }
 
 # Bundle JS and CSS into single files to make site loading faster in a HTTP/1.1
