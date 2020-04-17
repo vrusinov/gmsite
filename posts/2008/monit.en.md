@@ -88,4 +88,7 @@ check device data with path /dev/sdb1
     group server
 ```
 
-<h2>Links</h2><ul><li><a href="http://mmonit.com/monit/">monit official site</a></li><li> <a href="http://mmonit.com/">M/Monit</a></li></ul>
+# Links
+
+*   <a href="http://mmonit.com/monit/">Monit official site</a>
+*   <a href="http://mmonit.com/">M/Monit</a>
