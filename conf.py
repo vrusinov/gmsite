@@ -162,11 +162,13 @@ THEME_COLOR = '#5670d4'
 # Theme configuration. Fully theme-dependent. (translatable)
 # Examples below are for bootblog4.
 # bootblog4 supports: featured_large featured_small featured_on_mobile
-#                     featured_large_image_on_mobile featured_strip_html sidebar
+#                     featured_large_image_on_mobile featured_strip_html
+#                     sidebar
 # bootstrap4 supports: navbar_light (defaults to False)
 THEME_CONFIG = {
     DEFAULT_LANG: {
-        # Show the latest featured post in a large box, with the previewimage as its background.
+        # Show the latest featured post in a large box, with the previewimage
+        # as its background.
         'featured_large': False,
         # Show the first (remaining) two featured posts in small boxes.
         'featured_small': False,
@@ -244,7 +246,8 @@ TIMEZONE = "UTC"
 # FORCE_ISO8601 = False
 
 # Date format used to display post dates. (translatable)
-# Used by babel.dates, CLDR style: http://cldr.unicode.org/translation/date-time
+# Used by babel.dates, CLDR style:
+# http://cldr.unicode.org/translation/date-time
 # You can also use 'full', 'long', 'medium', or 'short'
 # DATE_FORMAT = 'yyyy-MM-dd HH:mm'
 
