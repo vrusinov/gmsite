@@ -1,9 +1,13 @@
 Blocking the launch:
 
-*   Index page should redirect to a language.
 *   Redirects from old URLs.
+*   Domain alias.
 
 Nice to have:
 
 *   Index page: detect language to redirect to.
-*   Static comments
+*   Static comments.
+*   Better font.
+*   Tags and tag cloud.
+*   Analytics.
+*   Ads?
