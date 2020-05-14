@@ -560,6 +560,25 @@ REDIRECTIONS = [
      '/en/posts/2009/iptables-router-performance/'),
     ('2008/11/monit-lightweight-monitoring-solution.html',
      '/en/posts/2008/monit-lightweight-monitoring-solution/'),
+    # Old Russian blogger urls
+    ('2010/02/7-java-heap.html', '/ru/posts/2010/7-java-heap/'),
+    ('2010/01/swap.html', '/ru/posts/2010/swap/'),
+    ('2009/05/nginx-2.html', '/ru/posts/2009/nginx-2/'),
+    ('2013/04/nginx-1.html', '/ru/posts/2013/nginx-1/'),
+    ('2009/03/gnunet.html', '/ru/posts/2009/gnunet/'),
+    ('2009/03/denyhosts-ssh.html', '/ru/posts/2009/denyhosts-ssh/'),
+    ('2009/02/apache.html', '/ru/posts/2009/apache/'),
+    ('2008/12/linux.html', '/ru/posts/2008/linux/'),
+    ('2008/12/gnu-screen.html', '/ru/posts/2008/gnu-screen/'),
+    ('2008/12/vi.html', '/ru/posts/2008/vi/'),
+    ('2008/12/blog-post.html', '/ru/posts/2008/blog-post/'),
+    ('2008/11/monit.html', '/ru/posts/2008/monit/'),
+    ('2008/11/blog-post.html', '/ru/posts/2008/change-case/'),
+    ('2008/10/openvpn-vpn-http-https.html',
+     '/ru/posts/2008/openvpn-vpn-http-https/'),
+    ('2008/10/blog-post.html', '/ru/posts/2008/change-password-on-login/'),
+    ('2008/08/bash.html', '/ru/posts/2008/bash/'),
+    ('2008/08/man-crontab.html', '/ru/posts/2008/man-crontab/'),
 ]
 
 # Presets of commands to execute to deploy. Can be anything, for
