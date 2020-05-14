@@ -553,14 +553,13 @@ ATOM_FILENAME_BASE = "feed"
 # SLUG_AUTHOR_PATH = True
 
 # A list of redirection tuples, [("foo/from.html", "/bar/to.html")].
-#
-# A HTML file will be created in output/foo/from.html that redirects
-# to the "/bar/to.html" URL. notice that the "from" side MUST be a
-# relative URL.
-#
-# If you don't need any of these, just set to []
 REDIRECTIONS = [
-    ('index.html', '/en/index.html')
+    ('index.html', '/en/index.html'),
+    # Old English blogger urls.
+    ('2009/07/iptables-router-performance.html',
+     '/en/posts/2009/iptables-router-performance/'),
+    ('2008/11/monit-lightweight-monitoring-solution.html',
+     '/en/posts/2008/monit-lightweight-monitoring-solution/'),
 ]
 
 # Presets of commands to execute to deploy. Can be anything, for
@@ -579,18 +578,9 @@ REDIRECTIONS = [
 #     ]
 # }
 
-# github_deploy configuration
-# For more details, read the manual:
-# https://getnikola.com/handbook.html#deploying-to-github
-# You will need to configure the deployment branch on GitHub.
 GITHUB_SOURCE_BRANCH = 'src'
 GITHUB_DEPLOY_BRANCH = 'master'
-
-# The name of the remote where you wish to push to, using github_deploy.
 GITHUB_REMOTE_NAME = 'origin'
-
-# Whether or not github_deploy should commit to the source branch automatically
-# before deploying.
 GITHUB_COMMIT_SOURCE = True
 
 # Where the output site should be located

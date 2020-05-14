@@ -11,3 +11,4 @@ Nice to have:
 *   Tags and tag cloud.
 *   Analytics.
 *   Ads?
+*   RSS feed per language.
