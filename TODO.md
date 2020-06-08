@@ -1,7 +1,6 @@
 Blocking the launch:
 
-*   Redirects from old URLs.
-*   Domain alias.
+*   GDPR note
 
 Nice to have:
 
@@ -15,3 +14,9 @@ Nice to have:
 *   Check for broken links.
 *   Adjust 404 page.
 *   Check for common 404 errors.
+*   Readme for generated site (for master branch)
+*   [Add sponsor button on GitHub](https://github.com/vrusinov/gmsite/settings)
+*   Switch source to master branch
+*   Adjust Netlify to build site automatically
+*   W3C/html standards validator
+*   Run `nikola check`

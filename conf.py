@@ -157,10 +157,10 @@ THEME_CONFIG = {
 #     )
 
 POSTS = (
+            ("posts/*.md", "posts", "post.tmpl"),
             ("posts/*.txt", "posts", "post.tmpl"),
             ("posts/*.rst", "posts", "post.tmpl"),
             ("posts/*.html", "posts", "post.tmpl"),
-            ("posts/*.md", "posts", "post.tmpl"),
             )
 PAGES = (
             ("articles/*.txt", "articles", "story.tmpl"),
@@ -253,7 +253,8 @@ ONE_FILE_POSTS = False
 # "TOML": TOML wrapped in "+++"
 # "Pelican": Native markdown metadata or reST docinfo fields. Nikola style for
 # other formats.
-METADATA_FORMAT = "Two-file"
+# METADATA_FORMAT = "Two-file"
+METADATA_FORMAT = "twofile"
 
 # Use date-based path when creating posts?
 # Can be enabled on a per-post basis with `nikola new_post -d`.
@@ -262,7 +263,7 @@ METADATA_FORMAT = "Two-file"
 
 # What format to use when creating posts with date paths?
 # Default is '%Y/%m/%d', other possibilities include '%Y' or '%Y/%m'.
-# NEW_POST_DATE_PATH_FORMAT = '%Y/%m/%d'
+NEW_POST_DATE_PATH_FORMAT = '%Y'
 
 # If this is set to True, the DEFAULT_LANG version will be displayed for
 # untranslated posts.
