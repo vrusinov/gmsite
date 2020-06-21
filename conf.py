@@ -91,7 +91,7 @@ NAVIGATION_ALT_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "bootblog4-jinja"
+THEME = "gmsite"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
@@ -163,9 +163,9 @@ POSTS = (
             ("posts/*.html", "posts", "post.tmpl"),
             )
 PAGES = (
-            ("pages/*.md", "pages", "story.tmpl"),
-            ("pages/*.txt", "pages", "story.tmpl"),
-            ("pages/*.rst", "pages", "story.tmpl"),
+            ("pages/*.md", "pages", "page.tmpl"),
+            ("pages/*.txt", "pages", "page.tmpl"),
+            ("pages/*.rst", "pages", "page.tmpl"),
             )
 
 

@@ -1,0 +1,60 @@
+{#  -*- coding: utf-8 -*- #}
+{% import 'post_helper.tmpl' as helper with context %}
+{% import 'post_header.tmpl' as pheader with context %}
+{% import 'comments_helper.tmpl' as comments with context %}
+{% import 'math_helper.tmpl' as math with context %}
+{% import 'ui_helper.tmpl' as ui with context %}
+{% extends 'base.tmpl' %}
+
+{% block extra_head %}
+    {{ super() }}
+    {% if post.meta('keywords') %}
+    <meta name="keywords" content="{{ smartjoin(', ', post.meta('keywords'))|e }}">
+    {% endif %}
+    <meta name="author" content="{{ post.author()|e }}">
+    {% if post.is_draft %}
+        <meta name="robots" content="noindex">
+    {% endif %}
+    {{ helper.open_graph_metadata(post) }}
+    {{ helper.twitter_card_information(post) }}
+    {{ helper.meta_translations(post) }}
+    {{ math.math_styles_ifpost(post) }}
+{% endblock %}
+
+{% block content %}
+<article class="post-{{ post.meta('type') }} h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
+        {{ pheader.html_title() }}
+        <div class="metadata">
+            <p class="dateline">
+            <a href="{{ post.permalink() }}" rel="bookmark">
+            {% if post.updated %}
+                <span class="updated"> {{ messages("Updated") }}
+                    <time class="updated dt-updated" datetime="{{ post.formatted_updated('webiso') }}" itemprop="dateUpdated" title="{{ post.formatted_updated(date_format)|e }}">{{ post.formatted_updated(date_format)|e }}</time></span>
+            {% endif %}
+            </a>
+            </p>
+            {% if not post.meta('nocomments') and site_has_comments %}
+                <p class="commentline">{{ comments.comment_link(post.permalink(), post._base_path) }}
+            {% endif %}
+            {{ pheader.html_sourcelink() }}
+            {% if post.meta('link') %}
+                    <p class="linkline"><a href="{{ post.meta('link') }}">{{ messages("Original site") }}</a></p>
+            {% endif %}
+        </div>
+        {{ pheader.html_translations(post) }}
+    </header>
+
+    <div class="e-content entry-content" itemprop="articleBody text">
+    {{ post.text() }}
+    </div>
+    {{ math.math_scripts_ifpost(post) }}
+</article>
+{{ comments.comment_link_script() }}
+{% endblock %}
+
+{% block sourcelink %}
+{% if show_sourcelink %}
+    {{ ui.show_sourcelink(post.source_link()) }}
+{% endif %}
+{% endblock %}
