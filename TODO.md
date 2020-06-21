@@ -1,7 +1,3 @@
-Blocking the launch:
-
-*   GDPR note
-
 Nice to have:
 
 *   Index page: detect language to redirect to.
@@ -21,3 +17,4 @@ Nice to have:
 *   W3C/html standards validator
 *   Run `nikola check`
 *   Remove 'Source' link
+*   Translate privacy policy
