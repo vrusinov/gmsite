@@ -163,8 +163,9 @@ POSTS = (
             ("posts/*.html", "posts", "post.tmpl"),
             )
 PAGES = (
-            ("articles/*.txt", "articles", "story.tmpl"),
-            ("articles/*.rst", "articles", "story.tmpl"),
+            ("pages/*.md", "pages", "story.tmpl"),
+            ("pages/*.txt", "pages", "story.tmpl"),
+            ("pages/*.rst", "pages", "story.tmpl"),
             )
 
 
@@ -254,7 +255,8 @@ ONE_FILE_POSTS = False
 # "Pelican": Native markdown metadata or reST docinfo fields. Nikola style for
 # other formats.
 # METADATA_FORMAT = "Two-file"
-METADATA_FORMAT = "twofile"
+# METADATA_FORMAT = "twofile"
+METADATA_FORMAT = "nikola"
 
 # Use date-based path when creating posts?
 # Can be enabled on a per-post basis with `nikola new_post -d`.

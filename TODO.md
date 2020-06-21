@@ -20,3 +20,4 @@ Nice to have:
 *   Adjust Netlify to build site automatically
 *   W3C/html standards validator
 *   Run `nikola check`
+*   Remove 'Source' link
