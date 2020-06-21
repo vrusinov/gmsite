@@ -12,7 +12,7 @@ Now, before I start implementing any backups, I need to understand what to back 
 
 Or what data do I have and how important is it?
 
-| Description    | Importance                              | Comment                                                                                                                      |
+| Description           | Importance                              | Comment                                                                                                                      |
 | --------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | **Files**             |                                         | Me & my spouse own several laptops, a desktop and a "home server" which is just an old laptop. All of them mostly run Linux. |
 | /home                 | Mixed: from worthless to very important | Spread over several laptops & desktops. A lot of files are duplicate between machines                                        |
