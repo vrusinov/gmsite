@@ -30,14 +30,15 @@
             <a href="{{ post.permalink() }}" rel="bookmark">
             {% if post.updated %}
                 <span class="updated"> {{ messages("Updated") }}
-                    <time class="updated dt-updated" datetime="{{ post.formatted_updated('webiso') }}" itemprop="dateUpdated" title="{{ post.formatted_updated(date_format)|e }}">{{ post.formatted_updated(date_format)|e }}</time></span>
+                    <time class="updated" datetime="{{ post.formatted_updated('webiso') }}" itemprop="dateUpdated" title="{{ post.formatted_updated(date_format)|e }}">
+                      {{ post.updated.strftime('%Y-%m-%d')|e }}
+                    </time></span>
             {% endif %}
             </a>
             </p>
             {% if not post.meta('nocomments') and site_has_comments %}
                 <p class="commentline">{{ comments.comment_link(post.permalink(), post._base_path) }}
             {% endif %}
-            {{ pheader.html_sourcelink() }}
             {% if post.meta('link') %}
                     <p class="linkline"><a href="{{ post.meta('link') }}">{{ messages("Original site") }}</a></p>
             {% endif %}
