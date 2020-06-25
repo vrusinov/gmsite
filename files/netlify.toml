@@ -93,12 +93,12 @@ from = "/2008/08/man-crontab.html"
 to = "/ru/posts/2008/man-crontab/"
 status = 301
 force = false
-[[redirects]]
-from = "/"
-to = "/ru/"
-status = 302
-force = false
-conditions = {Language = "ru"}
+# [[redirects]]
+# from = "/"
+# to = "/ru/"
+# status = 302
+# force = false
+# conditions = {Language = "ru"}
 [[redirects]]
 from = "/"
 to = "/en/"
