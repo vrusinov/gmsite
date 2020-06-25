@@ -19,4 +19,4 @@ Nice to have:
 *   Translate privacy policy
 *   Javascript language redirections (to make sure it works on non-Netlify)
 *   Add Netlify build badge
-*   Try Netlify plugins: https://app.netlify.com/teams/vrusinov/plugins
+*   Try [Netlify plugins](https://app.netlify.com/teams/vrusinov/plugins)
