@@ -1,6 +1,5 @@
 Nice to have:
 
-*   Index page: detect language to redirect to.
 *   Static comments.
 *   Better font.
 *   Tags and tag cloud.
