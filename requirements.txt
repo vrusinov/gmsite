@@ -1,2 +1,2 @@
-nikola[extras]
+nikola[extras]==8.0.4
 ruamel.yaml
