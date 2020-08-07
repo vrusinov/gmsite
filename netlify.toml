@@ -107,3 +107,8 @@ from = "/2008/08/man-crontab.html"
 to = "/ru/posts/2008/man-crontab/"
 status = 301
 force = true
+
+[build]
+  base    = ""
+  publish = "output"
+  command = "nikola build"
