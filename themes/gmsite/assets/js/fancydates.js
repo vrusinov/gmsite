@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2020 Getnikola authors https://github.com/getnikola/nikola
+//
+// SPDX-License-Identifier: MIT
+
 function fancydates(fanciness, date_format) {
     if (fanciness == 0) {
         return;
