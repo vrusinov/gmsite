@@ -1,2 +1,6 @@
+# SPDX-FileCopyrightText: 2020 Vladimir Rusinov
+#
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
 nikola[extras]==8.0.4
 ruamel.yaml
