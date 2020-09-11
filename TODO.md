@@ -1,7 +1,6 @@
 Nice to have:
 
 *   Static comments.
-*   Better font (text: Roboto; headers: PT Sans Narrow)
 *   Tags and tag cloud.
 *   Analytics.
 *   Ads.
