@@ -23,19 +23,20 @@ up. So let's start with...
 
 Or what data do I have and how important is it?
 
-| Description           | Importance      | Comment                                                                                                                                         |
-| --------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Files**             |                 | Me & my spouse own several laptops, a desktop and a "home server" which is just an old laptop. All of them mostly run Linux.                    |
-| /home                 | Mixed: Low-High | Spread over several laptops & desktops. A lot of files are duplicate between machines                                                           |
-| /etc                  | Medium          | Can be restored after a lot of documentation reading                                                                                            |
-| /var                  | Low             | I try not to put anything important there. Need to double-check though.                                                                         |
-| /root                 | Low             | Nothing there                                                                                                                                   |
-| /media and /mnt       | Medium          | Additional drives mounted there. Mostly various downloads which may be annoying to re-download                                                  |
-| /mnt/windows          | Low             | Special case - dual-boot Windows installation for games. Nothing there except saves which should be synced online                               |
-| /bin, /usr, /lib, etc | Low             | Easy enough to reinstall/repair from distribution                                                                                               |
-| **Devices**           |                 | Non-computer devices                                                                                                                            |
-| Phones                | Low             | We are on Android and almost everything is backed up to Google account. There is nothing really valuable there anyway.                          |
-| Virgin router         | Low             | I use internet from Virgin media and they insist on their own router. I use close to default settings there so loss of config is not a big deal |
-| Unifi Dream Machine   | Medium          | Most of the routing is done by Unifi Dream Machine, so its config is nice to preserve                                                           |
+| Description            | Importance      | Comment                                                                                                                                         |
+| ---------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Files**              |                 | Me & my spouse own several laptops, a desktop and a "home server" which is just an old laptop. All of them mostly run Linux.                    |
+| /home                  | Mixed: Low-High | Spread over several laptops & desktops. A lot of files are duplicate between machines                                                           |
+| /etc                   | Medium          | Can be restored after a lot of documentation reading                                                                                            |
+| /var                   | Low             | I try not to put anything important there. Need to double-check though.                                                                         |
+| /root                  | Low             | Nothing there                                                                                                                                   |
+| /media and /mnt        | Medium          | Additional drives mounted there. Mostly various downloads which may be annoying to re-download                                                  |
+| /mnt/windows           | Low             | Special case - dual-boot Windows installation for games. Nothing there except saves which should be synced online                               |
+| /bin, /usr, /lib, etc  | Low             | Easy enough to reinstall/repair from distribution                                                                                               |
+| **Devices**            |                 | Non-computer devices                                                                                                                            |
+| Phones                 | Low             | We are on Android and almost everything is backed up to Google account. There is nothing really valuable there anyway.                          |
+| Virgin router          | Low             | I use internet from Virgin media and they insist on their own router. I use close to default settings there so loss of config is not a big deal |
+| Unifi Dream Machine    | Medium          | Most of the routing is done by Unifi Dream Machine, so its config is nice to preserve                                                           |
 | Chromecast / Google TV | Low             | Don't hold any state                                                                                                                            |
-|                       |                 |                                                                                                                                                 |
+| **Online Services**    |                 |                                                                                                                                                 |
+| Gmail                  | High            |                                                                                                                                                 |
