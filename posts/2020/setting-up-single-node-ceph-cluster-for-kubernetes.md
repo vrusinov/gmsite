@@ -76,8 +76,7 @@ Check for its status:
 ```bash
 $ kubectl get pod -n rook-ceph
 NAME                                  READY   STATUS    RESTARTS   AGE
-rook-ceph-operator-6cc9c67b48-g8cm7   1/1     Running   0          2m27s
-rook-discover-xfnpw                   1/1     Running   0          73s
+rook-ceph-operator-6cc9c67b48-m875j   1/1     Running   0          15s
 ```
 
 ## Defining and creating a cluster.
