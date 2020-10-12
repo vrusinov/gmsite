@@ -79,7 +79,7 @@ NAME                                  READY   STATUS    RESTARTS   AGE
 rook-ceph-operator-6cc9c67b48-m875j   1/1     Running   0          15s
 ```
 
-## Defining and creating a cluster.
+## Defining and creating a cluster
 
 Prepare host:
 
@@ -104,36 +104,45 @@ Check pods:
 
 ```
 $ kubectl get pod -n rook-ceph
-NAME                                                              READY   STATUS    RESTARTS   AGE
-csi-cephfsplugin-kh4r6                                            3/3     Running   0          3m21s
-csi-cephfsplugin-provisioner-7469b99d4b-8b8nj                     5/5     Running   0          3m21s
-csi-cephfsplugin-provisioner-7469b99d4b-mckfq                     5/5     Running   0          3m21s
-csi-rbdplugin-provisioner-865f4d8d-ksrg6                          6/6     Running   0          3m21s
-csi-rbdplugin-provisioner-865f4d8d-l8x6l                          6/6     Running   0          3m21s
-csi-rbdplugin-qk7pk                                               3/3     Running   0          3m21s
-rook-ceph-crashcollector-krusty.home.greenmice.info-757455b57jb   1/1     Running   0          119s
-rook-ceph-mgr-a-cf5b85d54-kbgrg                                   1/1     Running   0          2m1s
-rook-ceph-mon-a-5bf98c9d49-k6g48                                  1/1     Running   0          2m53s
-rook-ceph-operator-6cc9c67b48-g8cm7                               1/1     Running   0          107m
-rook-discover-xfnpw                                               1/1     Running   0          106m
+NAME                                                              READY   STATUS        RESTARTS   AGE
+csi-cephfsplugin-provisioner-7469b99d4b-6wwdk                     5/5     Running       1          3d16h
+csi-cephfsplugin-provisioner-7469b99d4b-mj2zc                     5/5     Running       2          3d16h
+csi-cephfsplugin-rl2zf                                            3/3     Running       0          3d16h
+csi-rbdplugin-hw8fh                                               3/3     Running       0          3d16h
+csi-rbdplugin-provisioner-865f4d8d-dp5d9                          6/6     Running       4          3d16h
+csi-rbdplugin-provisioner-865f4d8d-r2wlf                          6/6     Running       0          3d16h
+rook-ceph-crashcollector-krusty.home.greenmice.info-75fdd66f7q2   1/1     Running       0          137m
+rook-ceph-mgr-a-64fd77c8fd-fhc4n                                  1/1     Running       4          4d14h
+rook-ceph-mon-a-cb5b84f5c-wjqjb                                   1/1     Running       5          4d14h
+rook-ceph-operator-6cc9c67b48-ltvxm                               1/1     Running       1          3d16h
+rook-ceph-operator-6cc9c67b48-m875j                               0/1     Terminating   8          4d14h
+rook-ceph-osd-0-7cd6975767-swtgr                                  1/1     Running       0          137m
+rook-ceph-osd-1-7b87f564fc-mcbd5                                  1/1     Running       0          137m
+rook-ceph-osd-prepare-krusty.home.greenmice.info-zsjd2            0/1     Completed     0          129m
+rook-ceph-tools                                                   1/1     Running       0          100s
+rook-discover-htxkp                                               1/1     Running       0          3d16h
+
 $ kubectl -n rook-ceph exec -it rook-ceph-tools -- ceph status
   cluster:
-    id:     54da5076-3190-4558-b60e-9aa715fa774a
-    health: HEALTH_WARN
-            OSD count 0 < osd_pool_default_size 3
-            mon a is low on available space
+    id:     6ab148e7-fd6e-4132-bdaf-e5ce7934d2cb
+    health: HEALTH_OK
 
   services:
-    mon: 1 daemons, quorum a (age 20m)
-    mgr: a(active, since 19m)
-    osd: 0 osds: 0 up, 0 in
+    mon: 1 daemons, quorum a (age 17h)
+    mgr: a(active, since 2h)
+    osd: 2 osds: 2 up (since 2h), 2 in (since 2h)
 
   data:
     pools:   0 pools, 0 pgs
     objects: 0 objects, 0 B
-    usage:   0 B used, 0 B / 0 B avail
+    usage:   2.0 GiB used, 1.3 TiB / 1.3 TiB avail
     pgs:
+
 ```
+
+## Using Ceph from outside the cluster
+
+TODO
 
 # Future work
 
