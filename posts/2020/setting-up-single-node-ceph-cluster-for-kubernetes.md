@@ -82,7 +82,6 @@ rook-ceph-operator-6cc9c67b48-m875j   1/1     Running   0          15s
 Modern versions of Ceph use ["Bluestore"](https://ceph.io/community/new-luminous-bluestore/) as a storage engine. Bluestore works on top of raw block devices, so for this installation I'd leave small SSD for a system, will use part of the second HDD, and will use entire USB-HDD for Ceph.
 
 ## Defining and creating a cluster.
->>>>>>> f95b1b6... WIP on ceph post
 
 Prepare host:
 
@@ -270,7 +269,6 @@ $ kubectl -n rook-ceph exec -it rook-ceph-tools -- ceph status
     objects: 0 objects, 0 B
     usage:   2.0 GiB used, 1.3 TiB / 1.3 TiB avail
     pgs:
-
 ```
 
 ## Using Ceph
@@ -302,7 +300,7 @@ spec:
     activeStandby: false
 ```
 
-and applied it via
+And applied:
 
 ```bash
 kubectl apply -f filesystem-test.yaml
