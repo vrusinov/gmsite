@@ -140,9 +140,95 @@ $ kubectl -n rook-ceph exec -it rook-ceph-tools -- ceph status
 
 ```
 
-## Using Ceph from outside the cluster
+## Using Ceph
 
-TODO
+I started with creating test filesystem and mounting it from outside of cluster - just to play with it.
+
+I've modified slightly filesystem-test.yaml from examples directory, changing name, and flipping `activeStandby` to false.
+
+```yaml
+apiVersion: ceph.rook.io/v1
+kind: CephFilesystem
+metadata:
+  name: test-fs
+  namespace: rook-ceph
+spec:
+  metadataPool:
+    replicated:
+      size: 1
+      requireSafeReplicaSize: false
+  dataPools:
+    - failureDomain: osd
+      replicated:
+        size: 1
+        requireSafeReplicaSize: false
+      compressionMode: none
+  preservePoolsOnDelete: false
+  metadataServer:
+    activeCount: 1
+    activeStandby: false
+```
+
+and applied it via
+
+```bash
+kubectl apply -f filesystem-test.yaml
+```
+
+After this I could see my test-fs in the `ceph status` output:
+
+```shell
+$ kubectl -n rook-ceph exec -it rook-ceph-tools -- ceph status
+  cluster:
+    id:     6ab148e7-fd6e-4132-bdaf-e5ce7934d2cb
+    health: HEALTH_WARN
+            2 pool(s) have no replicas configured
+
+  services:
+    mon: 1 daemons, quorum a (age 20h)
+    mgr: a(active, since 4h)
+    mds: test-fs:1 {0=test-fs-b=up:active} 1 up:standby-replay
+    osd: 2 osds: 2 up (since 5h), 2 in (since 5h)
+
+  task status:
+    scrub status:
+        mds.test-fs-a: idle
+        mds.test-fs-b: idle
+
+  data:
+    pools:   2 pools, 64 pgs
+    objects: 22 objects, 2.2 KiB
+    usage:   2.0 GiB used, 1.3 TiB / 1.3 TiB avail
+    pgs:     64 active+clean
+
+  io:
+    client:   1.2 KiB/s rd, 2 op/s rd, 0 op/s wr
+```
+
+Now, in order to mount it I needed to know address of the monitor service and a secret. There are better ways to do this but for test this can be obtained via these two commands:
+
+``` shell
+$ kubectl -n rook-ceph exec -it rook-ceph-tools -- grep mon_host /etc/ceph/ceph.conf
+mon_host = 192.168.0.54:6789
+$ kubectl -n rook-ceph exec -it rook-ceph-tools -- grep key /etc/ceph/keyring
+key = A<xxx>g==
+
+
+# Or, to save in variables:
+mon_host=$(kubectl -n rook-ceph exec -it rook-ceph-tools -- grep mon_host /etc/ceph/ceph.conf | cut -d " " -f 3 | tr -d '\r')
+ceph_secret=$(kubectl -n rook-ceph exec -it rook-ceph-tools -- grep key /etc/ceph/keyring | cut -d " " -f 3 | tr -d '\r')
+```
+
+In order to mount it the kernel needs to be compiled with Ceph support, and Ceph tools must be installed. My client was Gentoo and I was able to install Ceph tools via following command:
+
+```bash
+sudo emerge -av sys-cluster/ceph
+```
+
+```bash
+sudo mkdir -p /mnt/ceph-test-fs
+sudo mount -t ceph -o mds_namespace=test-fs,name=admin,secret=$ceph_secret $mon_host:/ /mnt/ceph-test-fs
+```
 
 # Future work
 
