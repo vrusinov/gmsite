@@ -70,6 +70,12 @@
     {{ helper.html_pager() }}
     {{ comments.comment_link_script() }}
     {{ math.math_scripts_ifposts(posts) }}
+
+    <div align="center">
+    <!-- liberapay widgets -->
+    <script src="https://liberapay.com/rvs/widgets/receiving.js"></script>
+    <script src="https://liberapay.com/rvs/widgets/giving.js"></script>
+    </div>
 {% endblock %}
 
 {% block before_content %}

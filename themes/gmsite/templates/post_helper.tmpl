@@ -35,6 +35,11 @@
                 <a href="{{ post.prev_post.permalink() }}" rel="prev" title="{{ post.prev_post.title()|e }}">{{ messages("Previous post") }}</a>
             </li>
         {% endif %}
+        <li>
+          <!-- liberapay donation button -->
+          <script src="https://liberapay.com/rvs/widgets/button.js"></script>
+          <noscript><a href="https://liberapay.com/rvs/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
+        </li>
         {% if post.next_post %}
             <li class="next">
                 <a href="{{ post.next_post.permalink() }}" rel="next" title="{{ post.next_post.title()|e }}">{{ messages("Next post") }}</a>
