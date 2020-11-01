@@ -238,3 +238,14 @@ ul.pager li a {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+
+.e-content td {
+  border: 1px solid;
+  vertical-align: top;
+  padding: 2pt;
+}
+
+.e-content th {
+  border: 1px solid ;
+  padding: 5pt;
+}
