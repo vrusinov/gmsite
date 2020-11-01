@@ -23,11 +23,11 @@ And as I wanted my backups to be cheap, "pay as you go" and off-site I've opted 
 
 ## Disadvantages
 
-- The fact it is has no server can be a disadvantage. In my case this means that I am forced to give Backblaze access key and restic respository password on each machine. This means each machine I own have full write permissions to Backblaze, and if it is compromised all data from all of my machines can be stolen, and all backups can be wiped. I find this an acceptable risk and have following mitigations:
-  - backup script (which contains those keys and passwords) is only readable by a `root` user.
-  - all of the local disks, especially on laptops are encrypted
-  - I will immediately revoke and regenerate Backblaze keys if I suspect anything.
-- Garbage collection may be problematic. In restic it is done in two steps. First, older backups (or "snapshots" in restic terminology) are marked for deletion. This only removes snapshot descriptors and leaves blobs of the data around. Then 'prune' operation does a garbage collection and removes unreferenced data. The prune operation is extremely slow and locks the whole respository (so no backups can take place while it's running). My repository is a little bit over 1 TiB and it's close to be impossible to prune: it's just takes too long. Thankfully there is a [very promising pull request](https://github.com/restic/restic/pull/2718) with prune re-implementation, and I hope it will be included in the next restic version.
+-   The fact it is has no server can be a disadvantage. In my case this means that I am forced to give Backblaze access key and restic respository password on each machine. This means each machine I own have full write permissions to Backblaze, and if it is compromised all data from all of my machines can be stolen, and all backups can be wiped. I find this an acceptable risk and have following mitigations:
+    - backup script (which contains those keys and passwords) is only readable by a `root` user.
+    - all of the local disks, especially on laptops are encrypted
+    - I will immediately revoke and regenerate Backblaze keys if I suspect anything.
+-   Garbage collection may be problematic. In restic it is done in two steps. First, older backups (or "snapshots" in restic terminology) are marked for deletion. This only removes snapshot descriptors and leaves blobs of the data around. Then 'prune' operation does a garbage collection and removes unreferenced data. The prune operation is extremely slow and locks the whole respository (so no backups can take place while it's running). My repository is a little bit over 1 TiB and it's close to be impossible to prune: it's just takes too long. Thankfully there is a [very promising pull request](https://github.com/restic/restic/pull/2718) with prune re-implementation, and I hope it will be included in the next restic version.
 
 # Why Backblaze?
 
