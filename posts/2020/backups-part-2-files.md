@@ -33,7 +33,7 @@ And as I wanted my backups to be cheap, "pay as you go" and off-site I've opted 
 
 Simply because it seemed to be the cheapest. There is a gotcha: downloads from Backblaze can be very expensive, so it will be expensive I ever need to restore large amount of data.
 
-I believe all of Backblaze dataceners are in US, and I would have preferred to keep my backups closer somewhere in EU. But nothing matches their prices (not even things like Amazon Glacier).
+I believe all of Backblaze datacenters are in US, and I would have preferred to keep my backups closer somewhere in EU. But nothing matches their prices (not even things like Amazon Glacier).
 
 # Using restic
 
@@ -165,7 +165,7 @@ retry 100 restic -r b2:${REPO?}:restic forget \
 retry 100 restic -r b2:${REPO?}:restic prune >> ${LOG}
 ```
 
-I've tried to run it weekly on one of my home machines, but my weak 20 Mbits uplink was not just fast enough. In current implementation prune may rewrite a lot of "packs", moving a lot of data around.
+I've tried to run it weekly on one of my home machines, but my weak 20 Mbit uplink was not just fast enough. In current implementation prune may rewrite a lot of "packs", moving a lot of data around.
 
 So I needed to run it in place with better connectivity. For this I've created another Kubernetes cluster, similarly to [what I did with my home server](/en/posts/2020/setting-up-single-node-kubernetes-cluster/) and few machines I have here. This new cluster was set up on two [Hetzner cloud machines](https://www.hetzner.com/cloud). I won't write about it as it is very similar setup to what I previously described.
 
