@@ -23,7 +23,7 @@ And as I wanted my backups to be cheap, "pay as you go" and off-site I've opted 
 
 ## Disadvantages
 
--   The fact it is has no server can be a disadvantage. In my case this means that I am forced to give Backblaze access key and restic respository password on each machine. This means each machine I own have full write permissions to Backblaze, and if it is compromised all data from all of my machines can be stolen, and all backups can be wiped. I find this an acceptable risk and have following mitigations:
+-   The fact it is has no server can be a disadvantage. In my case this means that I am forced to give Backblaze access key and restic repository password on each machine. This means each machine I own have full write permissions to Backblaze, and if it is compromised all data from all of my machines can be stolen, and all backups can be wiped. I find this an acceptable risk and have following mitigations:
     - backup script (which contains those keys and passwords) is only readable by a `root` user.
     - all of the local disks, especially on laptops are encrypted
     - I will immediately revoke and regenerate Backblaze keys if I suspect anything.
