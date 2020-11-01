@@ -1,6 +1,8 @@
-This post is a follow-up to [a post where I talk about backups strategy](/en/posts/2020/backups-part-1-strategy/).
+This post is a follow-up to
+[a post where I talk about backups strategy](/en/posts/2020/backups-part-1-strategy/).
 
-Here I describe my solution for file backups from my Linux computers, and don't yet go into the subject of other devices and online services.
+Here I describe my solution for file backups from my Linux computers, and don't
+yet go into the subject of other devices and online services.
 
 After some experimentation I decided to use [restic](https://restic.net/) for this. Restic is a modern, open-source backup program with an active community. It is written in Go. It runs on Linux (but also BSD, Mac and Windows) and can back up to local disks as well as remote/cloud services.
 
@@ -12,12 +14,12 @@ And as I wanted my backups to be cheap, "pay as you go" and off-site I've opted 
 
 ## Advantages
 
-- It can be distributed as a single, statically-compiled executable. It is also packaged for most of the Linux distributions.
-- It is a relatively simple client program, no server needed. The client has everything to back up your data.
-- It de-duplicates files regardless of where they come from. So if you have same files in different folders or machines, it will only store them once.
-- All backups are incremental. Obviously first backup will take a long time since there is nothing to increment against. Subsequent, and again even for different folders and machines will only copy files that don't exist in repository.
-- Supports almost any storage backend you can imagine. It is even possible to "Raid 0" several via [rclone backend](https://restic.net/blog/2018-04-01/rclone-backend/).
-- Encrypts all data.
+-   It can be distributed as a single, statically-compiled executable. It is also packaged for most of the Linux distributions.
+-   It is a relatively simple client program, no server needed. The client has everything to back up your data.
+-   It de-duplicates files regardless of where they come from. So if you have same files in different folders or machines, it will only store them once.
+-   All backups are incremental. Obviously first backup will take a long time since there is nothing to increment against. Subsequent, and again even for different folders and machines will only copy files that don't exist in repository.
+-   Supports almost any storage backend you can imagine. It is even possible to "Raid 0" several via [rclone backend](https://restic.net/blog/2018-04-01/rclone-backend/).
+-   Encrypts all data.
 
 ## Disadvantages
 
