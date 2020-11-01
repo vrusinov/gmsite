@@ -249,3 +249,19 @@ ul.pager li a {
   border: 1px solid ;
   padding: 5pt;
 }
+
+/* Green highlight to use in e.g. tables. */
+.hl-green {
+  color: green;
+  font-weight: bold;
+}
+
+.hl-orange {
+  color: orange;
+  font-weight: bold;
+}
+
+.hl-red {
+  color: red;
+  font-weight: bold;
+}

@@ -25,35 +25,35 @@ up. So let's start with...
 
 Or what data do I have and how important is it?
 
-| Description            | Importance | Comment                                                                                                                                         |
-| ---------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Files**              |            | Me & my spouse own several laptops, a desktop and a "home server" which is just an old laptop. All of them mostly run Linux.                    |
-| `/home`                  | High       | Spread over several laptops & desktops. A lot of files are duplicate between machines                                                           |
-| `/etc`                   | Low        | Can be restored after some documentation reading                                                                                                |
-| `/var`                   | Low        | I try not to put anything important there. Need to double-check though.                                                                         |
-| `/root`                  | Low        | Nothing there                                                                                                                                   |
-| `/media` and `/mnt`        | Medium     | Some additional devices may be mounted there.                                                                                                   |
-| `/mnt/windows`           | Low        | Special case - dual-boot Windows installation for games. Nothing there except saves which should be synced online                               |
-| `/bin`, `/usr`, `/lib`, etc  | Low        | Easy enough to reinstall/repair from distribution                                                                                               |
-| **Devices**            |            | Non-computer devices                                                                                                                            |
-| Phones                 | Low        | We are on Android and almost everything is backed up to Google account. There is nothing really valuable there anyway.                          |
-| Virgin router          | Low        | I use internet from Virgin media and they insist on their own router. I use close to default settings there so loss of config is not a big deal |
-| UniFi Dream Machine    | Medium     | Most of the home routing is done by UniFi Dream Machine, so its config is nice to preserve                                                      |
-| Chromecast / Google TV | Low        | Doesn't hold any state                                                                                                                          |
-| **Online Services**    |            |                                                                                                                                                 |
-| Facebook               | Medium     |                                                                                                                                                 |
-| Feedly                 | Medium     | It may be annoying to loose list of subscriptions                                                                                               |
-| GitHub                 | Medium     | It's important but by the nature of git I'll have many copies naturally                                                                         |
-| Gmail                  | High       |                                                                                                                                                 |
-| Google Calendar        | High       |                                                                                                                                                 |
-| Google Drive           | High       | A lot of important stuff there for archival                                                                                                     |
-| Google Keep            | Medium     | Some small notes there                                                                                                                          |
-| Netatmo                | Medium     |                                                                                                                                                 |
-| Password manager       | High       |                                                                                                                                                 |
-| ProtonMail             | Medium     |                                                                                                                                                 |
-| WhatsApp               | Low        |                                                                                                                                                 |
-| YouTube                | Medium     | No videos but playlists and subscriptions                                                                                                       |
-| YouTube music          | High       | My music collection is there. It would be bad to loose it along with my playlists                                                               |
+| Description                 | Importance | Comment                                                                                                                                         |
+| --------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Files**                   |            | Me & my spouse own several laptops, a desktop and a "home server" which is just an old laptop. All of them mostly run Linux.                    |
+| `/home`                     | High       | Spread over several laptops & desktops. A lot of files are duplicate between machines                                                           |
+| `/etc`                      | Low        | Can be restored after some documentation reading                                                                                                |
+| `/var`                      | Low        | I try not to put anything important there. Need to double-check though.                                                                         |
+| `/root`                     | Low        | Nothing there                                                                                                                                   |
+| `/media` and `/mnt`         | Medium     | Some additional devices may be mounted there.                                                                                                   |
+| `/mnt/windows`              | Low        | Special case - dual-boot Windows installation for games. Nothing there except saves which should be synced online                               |
+| `/bin`, `/usr`, `/lib`, etc | Low        | Easy enough to reinstall/repair from distribution                                                                                               |
+| **Devices**                 |            | Non-computer devices                                                                                                                            |
+| Phones                      | Low        | We are on Android and almost everything is backed up to Google account. There is nothing really valuable there anyway.                          |
+| Virgin router               | Low        | I use internet from Virgin media and they insist on their own router. I use close to default settings there so loss of config is not a big deal |
+| UniFi Dream Machine         | Medium     | Most of the home routing is done by UniFi Dream Machine, so its config is nice to preserve                                                      |
+| Chromecast / Google TV      | Low        | Doesn't hold any state                                                                                                                          |
+| **Online Services**         |            |                                                                                                                                                 |
+| Facebook                    | Medium     |                                                                                                                                                 |
+| Feedly                      | Medium     | It may be annoying to loose list of subscriptions                                                                                               |
+| GitHub                      | Medium     | It's important but by the nature of git I'll have many copies naturally                                                                         |
+| Gmail                       | High       |                                                                                                                                                 |
+| Google Calendar             | High       |                                                                                                                                                 |
+| Google Drive                | High       | A lot of important stuff there for archival                                                                                                     |
+| Google Keep                 | Medium     | Some small notes there                                                                                                                          |
+| Netatmo                     | Medium     |                                                                                                                                                 |
+| Password manager            | High       |                                                                                                                                                 |
+| ProtonMail                  | Medium     |                                                                                                                                                 |
+| WhatsApp                    | Low        |                                                                                                                                                 |
+| YouTube                     | Medium     | No videos but playlists and subscriptions                                                                                                       |
+| YouTube music               | High       | My music collection is there. It would be bad to loose it along with my playlists                                                               |
 
 That's everything I could remember at the moment.
 
@@ -96,3 +96,7 @@ Nice to have:
 - De-duplication across different hosts.
 - Pay as you go instead of subscription.
 - Use of open-source software so I can hack and improve my backup solution.
+
+# Next up
+
+That's all for this post. Check [part 2](/en/posts/2020/backups-part-2-files/) where I describe my solution for files backups.
