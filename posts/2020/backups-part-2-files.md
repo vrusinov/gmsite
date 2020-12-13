@@ -234,44 +234,44 @@ So there we have it. It covers all of my local file backup needs - for now. Back
 
 Just to remind, here's the summary of what data I have:
 
-| Description                 | Importance | Backed up?                          |
-| --------------------------- | ---------- | ----------------------------------- |
-| **Files**                   |            |                                     |
-| `/home`                     | High       | <span class="hl-green">Y</span>     |
-| `/etc`                      | Low        | <span class="hl-green">N</span>     |
-| `/var`                      | Low        | <span class="hl-green">N</span>     |
-| `/root`                     | Low        | <span class="hl-green">N</span>     |
-| `/media` and `/mnt`         | Medium     | <span class="hl-green">Y</span>     |
-| `/mnt/windows`              | Low        | <span class="hl-green">N</span>     |
-| `/bin`, `/usr`, `/lib`, etc | Low        | <span class="hl-green">N</span>     |
-| **Devices**                 |            |                                     |
-| Phones                      | Low        | <span style="color:green">N</span>  |
-| Virgin router               | Low        | <span style="color:green">N</span>  |
-| UniFi Dream Machine         | Medium     | <span style="color:orange">N</span> |
-| Chromecast / Google TV      | Low        | <span style="color:green">N</span>  |
-| **Online Services**         |            |                                     |
-| Facebook                    | Medium     | <span style="color:orange">N</span> |
-| Feedly                      | Medium     | <span style="color:orange">N</span> |
-| GitHub                      | Medium     | <span style="color:orange">N</span> |
-| Gmail                       | High       | <span style="color:red">N</span>    |
-| Google Calendar             | High       | <span style="color:red">N</span>    |
-| Google Drive                | High       | <span style="color:red">N</span>    |
-| Google Keep                 | Medium     | <span style="color:orange">N</span> |
-| Netatmo                     | Medium     | <span style="color:orange">N</span> |
-| Password manager            | High       | <span style="color:red">N</span>    |
-| ProtonMail                  | Medium     | <span style="color:orange">N</span> |
-| WhatsApp                    | Low        | <span style="color:green">N</span>  |
-| YouTube                     | Medium     | <span style="color:orange">N</span> |
-| YouTube music               | High       | <span style="color:green">N</span>  |
+| Description                 | Importance | Backed up?                             |
+| --------------------------- | ---------- | -------------------------------------- |
+| **Files**                   |            |                                        |
+| `/home`                     | High       | <span class="highlight-green">Y</span> |
+| `/etc`                      | Low        | <span class="highlight-green">N</span> |
+| `/var`                      | Low        | <span class="highlight-green">N</span> |
+| `/root`                     | Low        | <span class="highlight-green">N</span> |
+| `/media` and `/mnt`         | Medium     | <span class="highlight-green">Y</span> |
+| `/mnt/windows`              | Low        | <span class="highlight-green">N</span> |
+| `/bin`, `/usr`, `/lib`, etc | Low        | <span class="highlight-green">N</span> |
+| **Devices**                 |            |                                        |
+| Phones                      | Low        | <span style="color:green">N</span>     |
+| Virgin router               | Low        | <span style="color:green">N</span>     |
+| UniFi Dream Machine         | Medium     | <span style="color:orange">N</span>    |
+| Chromecast / Google TV      | Low        | <span style="color:green">N</span>     |
+| **Online Services**         |            |                                        |
+| Facebook                    | Medium     | <span style="color:orange">N</span>    |
+| Feedly                      | Medium     | <span style="color:orange">N</span>    |
+| GitHub                      | Medium     | <span style="color:orange">N</span>    |
+| Gmail                       | High       | <span style="color:red">N</span>       |
+| Google Calendar             | High       | <span style="color:red">N</span>       |
+| Google Drive                | High       | <span style="color:red">N</span>       |
+| Google Keep                 | Medium     | <span style="color:orange">N</span>    |
+| Netatmo                     | Medium     | <span style="color:orange">N</span>    |
+| Password manager            | High       | <span style="color:red">N</span>       |
+| ProtonMail                  | Medium     | <span style="color:orange">N</span>    |
+| WhatsApp                    | Low        | <span style="color:green">N</span>     |
+| YouTube                     | Medium     | <span style="color:orange">N</span>    |
+| YouTube music               | High       | <span style="color:green">N</span>     |
 
 # Future work
 
 The set up is not perfect and here's what I'd like to eventually improve:
 
-- Monitoring for successful/unsuccessful backups. Currently I only get e-mail from cron, and only if local mail is set up properly.
-- Add occasional truly offline backup. I may want to copy restic respotoroty to external HDD and ship it to my friends. This may help me recover things in case of some catastrophic failure of both my machines and my repository (e.g. if they are compromised or even just do something wacky as a result of e.g. corrupt memory).
-- You may have noticed I don't use Kubernetes secrets to store B2 keys properly. This needs to be fixed.
-- Keep looking around for solutions that don't make all of my data accessible to all backup clients.
+-   Monitoring for successful/unsuccessful backups. Currently I only get e-mail from cron, and only if local mail is set up properly.
+-   Add occasional truly offline backup. I may want to copy restic repository to external HDD and ship it to my friends. This may help me recover things in case of some catastrophic failure of both my machines and my repository (e.g. if they are compromised or even just do something wacky as a result of e.g. corrupt memory).
+-   You may have noticed I don't use Kubernetes secrets to store B2 keys properly. This needs to be fixed.
+-   Keep looking around for solutions that don't make all of my data accessible to all backup clients.
 
 # Alternatives considered
 
@@ -283,15 +283,15 @@ There's what I used or looked at previously.
 
 Advantages:
 
-- Mature software, so it's likely close to be bug-free. It feels very secure.
-- No problems with garbage collection - it simply removes files.
-- Different machines/directories may use different encryption keys.
-- Supports compression.
+-   Mature software, so it's likely close to be bug-free. It feels very secure.
+-   No problems with garbage collection - it simply removes files.
+-   Different machines/directories may use different encryption keys.
+-   Supports compression.
 
 Disadvantages:
 
-- No de-duplication across hosts. Each host is essentially on its own and have its own set of backup files, which don't intersect with others.
-- It follows classic full/incremental backup model. So it must have full backups once in a while, and then able to take increments based on that. Practically this means for any reasonable retention policy two full backups must co-exist pretty much all the time. So it would use 2x amount of space.
+-   No de-duplication across hosts. Each host is essentially on its own and have its own set of backup files, which don't intersect with others.
+-   It follows classic full/incremental backup model. So it must have full backups once in a while, and then able to take increments based on that. Practically this means for any reasonable retention policy two full backups must co-exist pretty much all the time. So it would use twice the space.
 
 ## duplicati
 
@@ -299,13 +299,13 @@ Disadvantages:
 
 Advantages:
 
-- Have fancy lock-free algorithm. This means all operations on repository can happen in parrallel. Garbage collection does not block backups!
+-   Have fancy lock-free algorithm. This means all operations on repository can happen in parallel. Garbage collection does not block backups!
 
 Disadvantages:
 
-- The newer versions appears to be written in C# and requires Mono.
-- The older version (which I used) while was technically open-source, was not very open. It felt more like commertial software.
-- I had problems with older version crapping itself and corrupting repository. It appears this part [was entierly rewritten](https://www.duplicati.com/articles/Storage-Engine/) so it may be better now.
+-   The newer versions appears to be written in C# and requires Mono.
+-   The older version (which I used) while was technically open-source, was not very open. It felt more like commertial software.
+-   I had problems with older version crapping itself and corrupting repository. It appears this part [was entierly rewritten](https://www.duplicati.com/articles/Storage-Engine/) so it may be better now.
 
 ## Borg
 

@@ -251,7 +251,7 @@ ul.pager li a {
 }
 
 /* Green highlight to use in e.g. tables. */
-.hl-green {
+.highlight-green {
   color: green;
   font-weight: bold;
 }
