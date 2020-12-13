@@ -305,7 +305,7 @@ Disadvantages:
 
 -   The newer versions appears to be written in C# and requires Mono.
 -   The older version (which I used) while was technically open-source, was not very open. It felt more like commercial software.
--   I had problems with older version crapping itself and corrupting repository. It appears this part [was entierly rewritten](https://www.duplicati.com/articles/Storage-Engine/) so it may be better now.
+-   I had problems with older version crapping itself and corrupting repository. It appears this part [was entirely rewritten](https://www.duplicati.com/articles/Storage-Engine/) so it may be better now.
 
 ## Borg
 
