@@ -313,6 +313,6 @@ Disadvantages:
 
 Unfortunately, it primarily works with local directories or over ssh. It does not appear to have support for any cloud providers, and I just don't have cheap off-site storage available over ssh. It is also not clear how well will it work with intermittent connections.
 
-## Commertial solutions
+## Commercial solutions
 
 Many of these are cool, however almost all operate on subscription basis, and limit number of computers (or are very expensive).
