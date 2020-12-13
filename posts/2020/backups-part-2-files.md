@@ -309,7 +309,7 @@ Disadvantages:
 
 ## Borg
 
-[Borg Backup](https://github.com/borgbackup) is really cool and I really wanted to use it. It's a client/server application (unlike the above), it has great documentation and acvive community.
+[Borg Backup](https://github.com/borgbackup) is really cool and I really wanted to use it. It's a client/server application (unlike the above), it has great documentation and active community.
 
 Unfortunately, it primarily works with local directories or over ssh. It does not appear to have support for any cloud providers, and I just don't have cheap off-site storage available over ssh. It is also not clear how well will it work with intermittent connections.
 
