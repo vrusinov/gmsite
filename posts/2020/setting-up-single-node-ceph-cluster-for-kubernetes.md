@@ -83,7 +83,7 @@ Modern versions of Ceph use ["Bluestore"](https://ceph.io/community/new-luminous
 
 ## Defining and creating a cluster.
 
-Prepare host:
+Prepare the host:
 
 ```bash
 sudo dnf install lvm2
@@ -338,9 +338,9 @@ $ kubectl -n rook-ceph exec -it rook-ceph-tools -- ceph status
 
 ## Using Ceph
 
-I started with creating test filesystem and mounting it from outside of cluster - just to play with it.
+The above does not create any Ceph 'pools' - we have Ceph components but no storage is actually usable. I've created one for test and mounted to my workstation outside of the Kubernetes cluster.
 
-I've modified slightly filesystem-test.yaml from examples directory, changing name, and flipping `activeStandby` to false.
+I've modified slightly filesystem-test.yaml from examples directory, changing name, and flipping `activeStandby` to false. Note this pool has replica size of 1 so it does not provide any redundancy.
 
 ```yaml
 apiVersion: ceph.rook.io/v1
@@ -365,7 +365,7 @@ spec:
     activeStandby: false
 ```
 
-and applied it via
+And applied it via:
 
 ```bash
 kubectl apply -f filesystem-test.yaml
