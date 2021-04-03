@@ -356,8 +356,12 @@ sudo emerge -av sys-cluster/ceph
 ```
 
 ```bash
-sudo mkdir -p /mnt/ceph-test-fs
-sudo mount -t ceph -o mds_namespace=test-fs,name=admin,secret=$ceph_secret $mon_host:/ /mnt/ceph-test-fs
+sudo mkdir -p /mnt/ceph-test
+sudo mount -t ceph -o mds_namespace=test,name=admin,secret=$ceph_secret $mon_host:/ /mnt/ceph-test
+
+# By default permissions set to be only writable by root
+sudo touch /mnt/ceph-test/test
+sudo rm /mnt/ceph-test/test
 ```
 
 # Future work
