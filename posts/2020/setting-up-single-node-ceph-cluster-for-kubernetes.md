@@ -1,20 +1,22 @@
 After setting up my shiny [single-node Kubernetes "cluster"](en/posts/2020/setting-up-single-node-kubernetes-cluster/) I wanted to do something useful with it. Many of the useful things require your useful data not to disappear, so I needed to figure out how to do that.
 
-In Kubernetes [storage is organized](https://kubernetes.io/docs/concepts/storage/) via Volumes which can be attached to Pods via Volume Claims. There are regular Volumes which are ephemeral and destroyed together with Pods (e.g. when it crashes or rescheduled). These are of course less interesting than Persistent Volumes which as the name suggest survive Pod restarts.
+In Kubernetes [storage is organized](https://kubernetes.io/docs/concepts/storage/) via Volumes. These Volumes can be attached to Pods via Volume Claims. There are two types of Volumes: regular ones and Persistent Volumes. Regular Volumes are ephemeral and destroyed together with Pods (e.g. when it crashes or rescheduled). These are of course less interesting than Persistent Volumes which as the name suggest survive Pod restarts.
 
 There are many ways to implement Persistent Volumes, the simplest is probably to use [Local Persistent Volumes](https://kubernetes.io/blog/2019/04/04/kubernetes-1.14-local-persistent-volumes-ga/). They simply bind local directory into pod. However they force pods to be always running on the same node.
 
-This is of course not good enough.
+This was not interesting enough for me so I went with something more complicated.
 
 <!-- TEASER_END -->
 
 # Choosing storage provider
 
+As with many things in Kubernetes there are many ways to implement Persistent Volumes.
+
 When running on top of public cloud the choice is fairly obvious: it's usually best to use the Cloud's virtual block device such as [gcePersistentDisk](https://kubernetes.io/docs/concepts/storage/volumes/#gcepersistentdisk) or [awsElasticBlockStore](https://kubernetes.io/docs/concepts/storage/volumes/#awselasticblockstore).
 
-I only had my poor server-laptop and no virtual block device providers. So I had to build my own virtual block devices or filesystems.
+I only had my poor server-laptop, potential to add more hosts in the future, and no virtual block device providers. So I had to build my own virtual block devices or filesystems.
 
-Here we have Gluster, EdgeFS and Ceph. The latter seemed to be the most interesting to me (and most familiar - many moons ago I was an SRE for a [very similar system](https://www.systutorials.com/colossus-successor-to-google-file-system-gfs/)).
+Here we have Gluster, EdgeFS and Ceph. The latter seemed to be the most interesting to me (and most familiar - I was an SRE for a [very similar system](https://www.systutorials.com/colossus-successor-to-google-file-system-gfs/)).
 
 # Planning Ceph installation
 
@@ -26,7 +28,7 @@ I had the single node with 3 different devices to play with. The node is just an
 
 By default Ceph requires at least 3 different nodes with at least one storage device each. However it is possible to configure Ceph's [CRUSH](https://docs.ceph.com/docs/jewel/rados/operations/crush-map/) to accept a single node.
 
-Thus I'd use replicated bucket with min_size of 2. So each piece of data will be stored at least 2 times on two different devices. This way I won't lose any data if one of the storage devices fails. And of course I'd lose everything if the whole laptop dies. This is OK for a home system, and I may add more hardware in the future.
+Thus I decided I'd use replicated bucket with min_size of 2. So each piece of data will be stored at least 2 times on two different devices. This way I won't lose any data if one of the storage devices fails. And of course I'd lose everything if the whole laptop dies. This is OK for a home system, and I may add more hardware in the future.
 
 # Deploying Ceph
 
@@ -35,7 +37,9 @@ There seems to be two ways of deploying Ceph:
 1.  Manually outside of Kubernetes (installing via OS packages)
 2.  On top of Kubernetes.
 
-For option 2 [Rook](https://rook.io/) is the most popular solution. Rook is a Kubernetes Operator - essentially a set of tools which make it easier to deploy and manage Ceph and other storage systems on top of Kubernetes.
+Setting Ceph manually seemed to be a lot of hassle. There's just too many components.
+
+For option 2 [Rook](https://rook.io/) is the most popular solution. Rook is a Kubernetes Operator - essentially a set of tools which make it easier to deploy and manage Ceph and other storage systems on top of Kubernetes. That's what I decided to use.
 
 ## Creating Rook manifest
 
@@ -81,15 +85,13 @@ rook-ceph-operator-6cc9c67b48-m875j   1/1     Running   0          15s
 
 Modern versions of Ceph use ["Bluestore"](https://ceph.io/community/new-luminous-bluestore/) as a storage engine. Bluestore works on top of raw block devices, so for this installation I'd leave small SSD for a system, will use part of the second HDD, and will use entire USB-HDD for Ceph.
 
-## Defining and creating a cluster.
-
-Prepare the host:
+LVM2 must be still installed:
 
 ```bash
 sudo dnf install lvm2
 ```
 
-Now it's time to deploy manifests which will create basic Ceph cluster. These will run components of Ceph: manager, monitor, OSD and several others. OSD is probably the most interesting one - they do the actual interaction with storage devices, and there will be one per device.
+Next, it was necessary to deploy manifests to create a basic Ceph cluster. These run components of Ceph: manager, monitor, OSD and several others. OSDs are probably the most interesting component - they do the actual interaction with storage devices, and there will be one per device.
 
 Since I used non-standard Ceph setup with just two devices I had to tweak sample manifests quite a bit. Here's `cluster.yaml`:
 
@@ -301,71 +303,6 @@ spec:
     activeStandby: false
 ```
 
-And applied:
-
-```bash
-kubectl apply -f filesystem-test.yaml
-```
-
-After this I could see my test-fs in the `ceph status` output:
-
-```shell
-$ kubectl -n rook-ceph exec -it rook-ceph-tools -- ceph status
-  cluster:
-    id:     6ab148e7-fd6e-4132-bdaf-e5ce7934d2cb
-    health: HEALTH_WARN
-            2 pool(s) have no replicas configured
-
-  services:
-    mon: 1 daemons, quorum a (age 20h)
-    mgr: a(active, since 4h)
-    mds: test-fs:1 {0=test-fs-b=up:active} 1 up:standby-replay
-    osd: 2 osds: 2 up (since 5h), 2 in (since 5h)
-
-  task status:
-    scrub status:
-        mds.test-fs-a: idle
-        mds.test-fs-b: idle
-
-  data:
-    pools:   2 pools, 64 pgs
-    objects: 22 objects, 2.2 KiB
-    usage:   2.0 GiB used, 1.3 TiB / 1.3 TiB avail
-    pgs:     64 active+clean
-
-  io:
-    client:   1.2 KiB/s rd, 2 op/s rd, 0 op/s wr
-```
-
-## Using Ceph
-
-The above does not create any Ceph 'pools' - we have Ceph components but no storage is actually usable. I've created one for test and mounted to my workstation outside of the Kubernetes cluster.
-
-I've modified slightly filesystem-test.yaml from examples directory, changing name, and flipping `activeStandby` to false. Note this pool has replica size of 1 so it does not provide any redundancy.
-
-```yaml
-apiVersion: ceph.rook.io/v1
-kind: CephFilesystem
-metadata:
-  name: test-fs
-  namespace: rook-ceph
-spec:
-  metadataPool:
-    replicated:
-      size: 1
-      requireSafeReplicaSize: false
-  dataPools:
-    - failureDomain: osd
-      replicated:
-        size: 1
-        requireSafeReplicaSize: false
-      compressionMode: none
-  preservePoolsOnDelete: false
-  metadataServer:
-    activeCount: 1
-    activeStandby: false
-```
-
 And applied it via:
 
 ```bash
@@ -421,6 +358,8 @@ In order to mount it the kernel needs to be compiled with Ceph support, and Ceph
 sudo emerge -av sys-cluster/ceph
 ```
 
+Let's try mounting now:
+
 ```bash
 sudo mkdir -p /mnt/ceph-test
 sudo mount -t ceph -o mds_namespace=test,name=admin,secret=$ceph_secret $mon_host:/ /mnt/ceph-test
@@ -429,6 +368,12 @@ sudo mount -t ceph -o mds_namespace=test,name=admin,secret=$ceph_secret $mon_hos
 sudo touch /mnt/ceph-test/test
 sudo rm /mnt/ceph-test/test
 ```
+
+# Conclusion
+
+Open-source cluster filesystems are here and available for hobbyists. Learning about them and setting everything up took many evenings (I did not mention many mistakes I did in this article), but now I have my own cluster filesystem.
+
+I did not actually use it for anything yet. Per documentation it should be a matter of creating non-test CephFilesystem and referencing it in Persistent Volume Claim of deployments. I may write about it in the future.
 
 # Future work
 
