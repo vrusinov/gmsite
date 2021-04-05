@@ -271,7 +271,6 @@ $ kubectl -n rook-ceph exec -it rook-ceph-tools -- ceph status
     objects: 0 objects, 0 B
     usage:   2.0 GiB used, 1.3 TiB / 1.3 TiB avail
     pgs:
-
 ```
 
 ## Using Ceph
