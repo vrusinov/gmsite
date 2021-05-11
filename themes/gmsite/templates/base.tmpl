@@ -11,6 +11,19 @@
 {#  Leave this block alone. #}
 {% endblock %}
 {{ template_hooks['extra_head']() }}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DNS8M51YJM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Default ad_storage to 'denied'.
+  gtag('consent', 'default', {
+    'ad_storage': 'denied'
+  });
+  gtag('set', 'url_passthrough', true);
+  gtag('js', new Date());
+  gtag('config', 'G-DNS8M51YJM');
+</script>
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">{{ messages("Skip to main content") }}</a>
