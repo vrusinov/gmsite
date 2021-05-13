@@ -22,7 +22,7 @@ Google Analytics is set up in ['consent' mode](https://developers.google.com/gta
 
 [URL Passthrough](https://developers.google.com/gtagjs/devguide/consent#url_passthrough) is enabled. With this setting Google Analytics may pass information through URL parameters across pages in order to improve measurement quality.
 
-Google's privacy policy can be found here: https://policies.google.com/privacy
+Google's privacy policy can be found [here](https://policies.google.com/privacy)
 
 ## Cookies
 
@@ -41,5 +41,5 @@ Should you wish to exercise any of these rights, please contact me. You can find
 
 # Links
 
-  * [Netlify privacy policy](https://www.netlify.com/gdpr/)
-  * [Google Privacy Policy](https://policies.google.com/privacy)
+*   [Netlify privacy policy](https://www.netlify.com/gdpr/)
+*   [Google Privacy Policy](https://policies.google.com/privacy)
