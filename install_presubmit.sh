@@ -1,2 +1,2 @@
 #!/bin/bash
-ln -sf ../../hooks/presubmit.sh .git/hooks/pre-commit
+ln -sf ../../presubmit.sh .git/hooks/pre-commit
