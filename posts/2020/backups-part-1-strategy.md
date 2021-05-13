@@ -51,13 +51,16 @@ Or what data do I have and how important is it?
 | Netatmo                     | Medium     |                                                                                                                                                 |
 | Password manager            | High       |                                                                                                                                                 |
 | ProtonMail                  | Medium     |                                                                                                                                                 |
+| Reddit                      | Medium     |                                                                                                                                                 |
 | WhatsApp                    | Low        |                                                                                                                                                 |
 | YouTube                     | Medium     | No videos but playlists and subscriptions                                                                                                       |
-| YouTube music               | High       | My music collection is there. It would be bad to loose it along with my playlists                                                               |
+| YouTube Music               | High       | My music collection is there. It would be bad to loose it along with my playlists                                                               |
 
 That's everything I could remember at the moment.
 
-You may have noticed I've also included online services in the list of data I care about. I believe it's a mistake to leave them out. I expect companies to take a good care of my data (and I know firsthand it is true in case og Google). However, I may get locked out of the account for some reason, or the service may be unavailable at some critical time, or may even shut down.
+You may have noticed I've also included online services in the list of data I
+care about. I believe it's a mistake to leave them out. I expect companies to
+take a good care of my data (and I know first-hand it is true in case of Google). However, I may get locked out of the account for some reason, or the service may be unavailable at some critical time, or may even shut down.
 
 Next, I need to understand what do I need to protect from.
 
@@ -73,12 +76,13 @@ Next, I need to understand what do I need to protect from.
 
 # Other considerations
 
-- I extensively use [syncthing](https://syncthing.net/) between my machines, so a lot of files are duplicate between them.
-- I don't want to spend a fortune on these backups.
-- I dislike and try to avoid subscription services and would prefer to pay for what I use approach.
-- A lot of my machines have intermittent connection to the Internet, and often do not have public IP address.
-- I have a weak Internet uplink at home (upload is capped at 20 Mbps).
-- A lot of my data does not change too frequently.
+-   I use [syncthing](https://syncthing.net/) extensively to sync files between
+    my machines, so a lot of files are duplicates.
+-   I don't want to spend a fortune on these backups.
+-   I dislike and try to avoid subscription services and would prefer to pay for what I use approach.
+-   A lot of my machines have intermittent connection to the Internet, and often do not have public IP address.
+-   I have a weak Internet uplink at home (upload is capped at 20 Mbps).
+-   A lot of my data does not change too frequently.
 
 # Solution requirements
 
@@ -86,16 +90,16 @@ Taking all of above into consideration, here's what I would like from my backup 
 
 Must-have:
 
-- Off-site and ideally offline backups.
-- Ability to work with clients without public IP.
-- Ability to do incremental backups.
-- I did not mention this, but all data must be encrypted in transit and at rest.
+-   Off-site and ideally offline backups.
+-   Ability to work with clients without public IP.
+-   Ability to do incremental backups.
+-   I did not mention this, but all data must be encrypted in transit and at rest.
 
 Nice to have:
 
-- De-duplication across different hosts.
-- Pay as you go instead of subscription.
-- Use of open-source software so I can hack and improve my backup solution.
+-   De-duplication across different hosts.
+-   Pay as you go instead of subscription.
+-   Use of open-source software so I can hack and improve my backup solution.
 
 # Next up
 
