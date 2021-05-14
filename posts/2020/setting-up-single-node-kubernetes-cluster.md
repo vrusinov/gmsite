@@ -412,6 +412,24 @@ sudo systemctl restart kubelet
 kubectl get nodes
 ```
 
+Editing yaml file above was actually a hack. To make it permanent and to make
+sure the file is not overwritten (e.g. during version upgrades) I needed to
+modify corresponding ConfigMap. This can be done by running
+`kubectl -n kube-system edit ConfigMap/kubeadm-config`. There I updated
+`caFile`, `certFile` and `keyFile` to point to correct files, and changed
+endpoint to https.
+
+```yaml
+   etcd:
+     external:
+       caFile: "/etc/kubernetes/pki/etcd/ca.crt"
+       certFile: "/etc/kubernetes/pki/etcd/server.crt"
+       endpoints:
+       - https://192.168.0.54:2379
+       keyFile: "/etc/kubernetes/pki/etcd/server.key"
+```
+
+
 # Final words
 
 As this was the first time I played with Kubernetes all of this took quite a few
