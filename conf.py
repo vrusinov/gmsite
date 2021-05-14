@@ -20,8 +20,8 @@ import time
 # Data about this site
 BLOG_AUTHOR = "Vladimir Rusinov"  # (translatable)
 BLOG_TITLE = {
-    'ru': "Зеленое Мышко",
-    'en': 'GM'
+    'ru': "rusinov.ie",
+    'en': 'rusinov.ie'
 }
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
