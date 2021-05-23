@@ -942,8 +942,8 @@ RSS_COPYRIGHT_FORMATS = CONTENT_FOOTER_FORMATS
 # systems.  The following comment systems are supported by Nikola:
 #   disqus, facebook, intensedebate, isso, muut, commento
 # You can leave this option blank to disable comments.
-COMMENT_SYSTEM = ""
-COMMENT_SYSTEM_ID = "nikolademo"
+COMMENT_SYSTEM = "remark42"
+COMMENT_SYSTEM_ID = "rusinov_ie"
 
 # Create index.html for page folders?
 # WARNING: if a page would conflict with the index file (usually
