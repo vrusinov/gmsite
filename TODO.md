@@ -1,6 +1,5 @@
 Nice to have:
 
-*   Static comments.
 *   Tags and tag cloud.
 *   Analytics.
 *   Ads.
@@ -20,3 +19,6 @@ Nice to have:
 *   Add Netlify build badge
 *   Try [Netlify plugins](https://app.netlify.com/teams/vrusinov/plugins)
 *   Syntax highlighting for bash and shell
+*   Comments: add support for more authentication providers
+*   Comments: Enable e-mail notifications
+*   Comments: Set up backups.
