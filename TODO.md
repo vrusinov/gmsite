@@ -22,3 +22,5 @@ Nice to have:
 *   Comments: add support for more authentication providers
 *   Comments: Enable e-mail notifications
 *   Comments: Set up backups.
+*   Use [stylelint](https://stylelint.io/)
+*   Use [bootlint](https://blog.getbootstrap.com/2014/09/23/bootlint/)
