@@ -79,11 +79,17 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 #          with a ``/``, otherwise end them with ``/index.html`` — or
 #          else they won’t be highlighted when active.
 
+
 NAVIGATION_LINKS = {
-    DEFAULT_LANG: (
-        ("/archive.html", "Archives"),
-        ("/categories/index.html", "Tags"),
-        ("/rss.xml", "RSS feed"),
+    "en": (
+        ("/en/archive.html", "Archives"),
+        ("/en/tags/index.html", "Tags"),
+        ("/en/rss.xml", "RSS"),
+    ),
+    "ru": (
+        ("/ru/archive.html", "Архив"),
+        ("/ru/tags/index.html", "Теги"),
+        ("/ru/rss.xml", "RSS"),
     ),
 }
 
@@ -290,7 +296,7 @@ LOGO_URL = ''
 # output / TRANSLATION[lang] / TAG_PATH / tag RSS_EXTENSION (RSS feed for a
 #   tag)
 # (translatable)
-# TAG_PATH = "categories"
+TAG_PATH = "tags"
 
 # By default, the list of tags is stored in
 #     output / TRANSLATION[lang] / TAG_PATH / index.html
@@ -302,7 +308,7 @@ LOGO_URL = ''
 
 # If TAG_PAGES_ARE_INDEXES is set to True, each tag's page will contain
 # the posts themselves. If set to False, it will be just a list of links.
-# TAG_PAGES_ARE_INDEXES = False
+TAG_PAGES_ARE_INDEXES = False
 
 # Set descriptions for tag pages to make them more interesting. The
 # default is no description. The value is used in the meta description
@@ -332,7 +338,7 @@ HIDDEN_TAGS = ['mathjax']
 # TAGLIST_MINIMUM_POSTS number of posts or more with every tag. Every tag
 # page is still generated, linked from posts, and included in the sitemap.
 # However, more obscure tags can be hidden from the tag index page.
-# TAGLIST_MINIMUM_POSTS = 1
+TAGLIST_MINIMUM_POSTS = 1
 
 # A list of dictionaries specifying tags which translate to each other.
 # Format: a list of dicts {language: translation, language2: translation2, …}
@@ -346,7 +352,7 @@ HIDDEN_TAGS = ['mathjax']
 # If set to True, a tag in a language will be treated as a translation
 # of the literally same tag in all other languages. Enable this if you
 # do not translate tags, for example.
-# TAG_TRANSLATIONS_ADD_DEFAULTS = True
+TAG_TRANSLATIONS_ADD_DEFAULTS = True
 
 # Final locations are:
 # output / TRANSLATION[lang] / CATEGORY_PATH / index.html (list of categories)
