@@ -1,6 +1,5 @@
-Nice to have:
+Things to do:
 
-*   Tags and [tag cloud](https://plugins.getnikola.com/v7/static_tag_cloud/).
 *   Analytics.
 *   Ads.
 *   RSS feed per language.
@@ -29,5 +28,5 @@ Nice to have:
 *   Replace 'Русский' and other language names with flags.
 *   Clearly define license
 *   Publish tag_cloud_shortcode plugin
-*   Tag icons and colours, similar to https://mdbootstrap.com/snippets/jquery/adamjakubowski/694459
+*   Tag icons and colours, similar to [this](https://mdbootstrap.com/snippets/jquery/adamjakubowski/694459)
 *   Start using [tags plugin](https://plugins.getnikola.com/v7/tags/)
