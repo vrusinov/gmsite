@@ -1,0 +1,12 @@
+[Core]
+Name = tag_cloud
+Module = tag_cloud
+
+[Documentation]
+Author = Vladimir Rusinov
+Version = 0.1
+Website = https://www.rusinov.ie
+Description = shortcode for 'Tag cloud' rendering
+
+[Nikola]
+PluginCategory = SignalHandler
