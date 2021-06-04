@@ -1,6 +1,5 @@
 Things to do:
 
-*   Analytics.
 *   Ads.
 *   RSS feed per language.
 *   Check for broken links.
