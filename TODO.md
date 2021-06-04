@@ -27,3 +27,4 @@ Nice to have:
 *   Better colour scheme
 *   Better design
 *   Replace 'Русский' and other language names with flags.
+*   Clearly define license
