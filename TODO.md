@@ -1,6 +1,6 @@
 Nice to have:
 
-*   Tags and tag cloud.
+*   Tags and [tag cloud](https://plugins.getnikola.com/v7/static_tag_cloud/).
 *   Analytics.
 *   Ads.
 *   RSS feed per language.
