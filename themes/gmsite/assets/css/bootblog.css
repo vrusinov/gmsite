@@ -69,10 +69,10 @@ body {
 .blog-header {
   line-height: 1;
   border-bottom: 1px solid #e5e5e5;
+  font-family: "PT Sans Narrow", serif;
 }
 
 .blog-header-logo {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
   font-size: 2.25rem;
 }
 
@@ -234,15 +234,6 @@ article .metadata {
     margin-right: 0;
 }
 
-.bootblog4-right-nav {
-    flex-direction: row;
-}
-
-.bootblog4-right-nav .nav-link {
-    padding-right: .5rem;
-    padding-left: .5rem;
-}
-
 .bootblog4-featured-text {
     overflow: auto;
 }
@@ -254,19 +245,6 @@ article .metadata {
 }
 
 @media (max-width: 767px) {
-    .bootblog4-right-nav {
-        margin-top: 1rem;
-    }
-
-    .bootblog4-search-form-holder {
-        position: absolute;
-        top: 2.75rem;
-    }
-
-    .bootblog4-search-form-holder input.form-control {
-        width: 6rem;
-    }
-
     .bootblog4-brand {
         text-align: left;
     }
@@ -279,10 +257,6 @@ article .metadata {
 
     .flex-collapse {
         display: flex !important;
-    }
-
-    .bootblog4-search-form-holder {
-        display: block !important;
     }
 
     .bootblog4-brand {
