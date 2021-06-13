@@ -273,11 +273,15 @@ $ kubectl -n rook-ceph exec -it rook-ceph-tools -- ceph status
     pgs:
 ```
 
-## Using Ceph
+## Using Ceph - test filesystem
 
-The above does not create any Ceph 'pools' - we have Ceph components but no storage is actually usable. I've created one for test and mounted to my workstation outside of the Kubernetes cluster.
+The above does not create any Ceph 'pools' - we have Ceph components but no
+storage is actually usable. I've created one for test and mounted to my
+workstation outside of the Kubernetes cluster.
 
-I've modified slightly filesystem-test.yaml from examples directory, changing name, and flipping `activeStandby` to false. Note this pool has replica size of 1 so it does not provide any redundancy.
+To do this slightly modified `filesystem-test.yaml` from examples directory. I
+changed name and flipped `activeStandby` to false. Note this pool has replica
+size of 1 so it does not provide any redundancy.
 
 ```yaml
 apiVersion: ceph.rook.io/v1
@@ -302,7 +306,7 @@ spec:
     activeStandby: false
 ```
 
-And applied it via:
+Applied via:
 
 ```bash
 kubectl apply -f filesystem-test.yaml
@@ -338,15 +342,20 @@ $ kubectl -n rook-ceph exec -it rook-ceph-tools -- ceph status
     client:   1.2 KiB/s rd, 2 op/s rd, 0 op/s wr
 ```
 
-Now, in order to mount it I needed to know address of the monitor service and a secret. There are better ways to do this but for test this can be obtained via these two commands:
+Now, in order to mount it I needed to know address of the monitor service and a
+secret. There are probably better ways to do this but for test this can be
+obtained via these two commands:
 
 ``` shell
 $ kubectl -n rook-ceph exec -it rook-ceph-tools -- grep mon_host /etc/ceph/ceph.conf
 mon_host = 192.168.0.54:6789
 $ kubectl -n rook-ceph exec -it rook-ceph-tools -- grep key /etc/ceph/keyring
 key = A<xxx>g==
+```
 
-# Or, to save in variables:
+Or, to save in variables:
+
+```bash
 mon_host=$(kubectl -n rook-ceph exec -it rook-ceph-tools -- grep mon_host /etc/ceph/ceph.conf | cut -d " " -f 3 | tr -d '\r')
 ceph_secret=$(kubectl -n rook-ceph exec -it rook-ceph-tools -- grep key /etc/ceph/keyring | cut -d " " -f 3 | tr -d '\r')
 ```
@@ -357,7 +366,7 @@ In order to mount it the kernel needs to be compiled with Ceph support, and Ceph
 sudo emerge -av sys-cluster/ceph
 ```
 
-Let's try mounting now:
+And mount:
 
 ```bash
 sudo mkdir -p /mnt/ceph-test
@@ -366,6 +375,160 @@ sudo mount -t ceph -o mds_namespace=test,name=admin,secret=$ceph_secret $mon_hos
 # By default permissions set to be only writable by root
 sudo touch /mnt/ceph-test/test
 sudo rm /mnt/ceph-test/test
+```
+
+## Using Ceph - "prod" filesystem
+
+Filesystem with redundancy of 1 would obviously have terrible durability. Ceph recommends replication factor of 3 or using Reed-Solomon encoding.
+
+I used replication of 2 instead. It still has poor durability. Not only because 2 device failures may result in data loss, but also if there is some form of corruption (e.g. due to bitrot or sudden crash), Ceph may not be able to determine which one of the two replicas is correct. Still, it's good enough for my purpose.
+
+I removed test filesystem created earlier and created a proper one:
+
+```yaml
+# https://github.com/rook/rook/blob/master/Documentation/ceph-filesystem.md
+apiVersion: ceph.rook.io/v1
+kind: CephFilesystem
+metadata:
+  name: replicated2
+  namespace: rook-ceph
+spec:
+  metadataPool:
+    replicated:
+      size: 2
+      requireSafeReplicaSize: true
+  dataPools:
+    # failureDomain: osd protects from a single osd crash or single device failure but not from the whole node failure.
+    - failureDomain: osd
+      replicated:
+        size: 2
+        requireSafeReplicaSize: true
+      compressionMode: aggressive
+  preservePoolsOnDelete: false
+  metadataServer:
+    activeCount: 1
+    activeStandby: false
+```
+
+Now, it order to be able to use this in Ceph via PersistentVolumeClaim, storage class needed to be created also:
+
+```yaml
+# https://github.com/rook/rook/blob/master/Documentation/ceph-filesystem.md
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: rook-cephfs
+# Change "rook-ceph" provisioner prefix to match the operator namespace if needed
+provisioner: rook-ceph.cephfs.csi.ceph.com
+allowVolumeExpansion: true
+parameters:
+  # clusterID is the namespace where operator is deployed.
+  clusterID: rook-ceph
+
+  # CephFS filesystem name into which the volume shall be created
+  fsName: replicated2
+
+  # Ceph pool into which the volume shall be created
+  # Required for provisionVolume: "true"
+  pool: replicated2-data0
+
+  # The secrets contain Ceph admin credentials. These are generated automatically by the operator
+  # in the same namespace as the cluster.
+  csi.storage.k8s.io/provisioner-secret-name: rook-csi-cephfs-provisioner
+  csi.storage.k8s.io/provisioner-secret-namespace: rook-ceph
+  csi.storage.k8s.io/controller-expand-secret-name: rook-csi-cephfs-provisioner
+  csi.storage.k8s.io/controller-expand-secret-namespace: rook-ceph
+  csi.storage.k8s.io/node-stage-secret-name: rook-csi-cephfs-node
+  csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph
+
+reclaimPolicy: Delete
+```
+
+And that was enough to be able to use CephFS as persistent volumes for my Kubernetes Pods, e.g. for [Jellyfin](https://jellyfin.org/):
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jellyfin-config
+  namespace: media
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: rook-cephfs
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: media
+  namespace: media
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: rook-cephfs
+  resources:
+    requests:
+      storage: 100Gi
+---
+# Jellyfin deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jellyfin-deployment
+  labels:
+    app: jellyfin
+  namespace: media
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: jellyfin
+  template:
+    metadata:
+      labels:
+        app: jellyfin
+    spec:
+      containers:
+      - name: jellyfin
+        image: linuxserver/jellyfin:version-10.7.5-1
+        ports:
+        - containerPort: 8096
+        env:
+        - name: TZ
+          value: "Europe/Dublin"
+        - name: UMASK
+          value: "000"
+        - name: PUID
+          value: "1000"
+        - name: PGID
+          value: "1000"
+        volumeMounts:
+        - name: media
+          mountPath: /data
+        - name: jellyfin-config
+          mountPath: /config
+        resources:
+          limits:
+            cpu: "4"
+            memory: "1Gi"
+          requests:
+            cpu: "10m"
+            memory: "512Mi"
+      securityContext:
+        fsGroup: 1000
+        fsGroupChangePolicy: "OnRootMismatch"
+      volumes:
+        - name: media
+          persistentVolumeClaim:
+            claimName: media
+        - name: jellyfin-config
+          persistentVolumeClaim:
+            claimName: jellyfin-config
 ```
 
 # Conclusion
