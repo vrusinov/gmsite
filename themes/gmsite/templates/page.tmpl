@@ -26,6 +26,23 @@
 {% endblock %}
 
 {% block content %}
+{% if not post.meta('nocomments') and site_has_comments %}
+<script>
+  var remark_config = {
+    host: "https://comments.rusinov.ie", // hostname of remark server, same as REMARK_URL in backend config, e.g. "https://demo.remark42.com"
+    site_id: 'rusinov_ie',
+    components: ['embed'],
+    // url: 'PAGE_URL',
+    max_shown_comments: 50,
+    theme: 'light',
+    page_title: '{{ post.title() }}',
+    locale: '{{ lang }}',
+    // TODO: enable email subscriptions
+    show_email_subscription: false,
+  };
+</script>
+<script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);</script>
+{% endif %}
 <article class="post-{{ post.meta('type') }} h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
     <header>
         {{ pheader.html_title() }}
@@ -40,9 +57,6 @@
             {% endif %}
             </a>
             </p>
-            {% if not post.meta('nocomments') and site_has_comments %}
-                <p class="commentline">{{ comments.comment_link(post.permalink(), post._base_path) }}
-            {% endif %}
             {% if post.meta('link') %}
                     <p class="linkline"><a href="{{ post.meta('link') }}">{{ messages("Original site") }}</a></p>
             {% endif %}
@@ -54,6 +68,9 @@
     {{ post.text() }}
     </div>
     {{ math.math_scripts_ifpost(post) }}
+    {% if not post.meta('nocomments') %}
+        <div id="remark42"></div>
+    {% endif %}
 </article>
 {{ comments.comment_link_script() }}
 {% endblock %}
