@@ -1,6 +1,5 @@
 Things to do:
 
-*   Ads.
 *   RSS feed per language.
 *   Check for broken links.
 *   Adjust 404 page.
@@ -8,13 +7,11 @@ Things to do:
 *   Readme for generated site (for master branch)
 *   [Add sponsor button on GitHub](https://github.com/vrusinov/gmsite/settings)
 *   Switch source to master branch
-*   Adjust Netlify to build site automatically
 *   W3C/html standards validator
 *   Run `nikola check`
 *   Remove 'Source' link
 *   Translate privacy policy
 *   JavaScript language redirections (to make sure it works on non-Netlify)
-*   Add Netlify build badge
 *   Try [Netlify plugins](https://app.netlify.com/teams/vrusinov/plugins)
 *   Syntax highlighting for bash and shell
 *   Comments: add support for more authentication providers
