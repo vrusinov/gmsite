@@ -124,9 +124,10 @@ sudo systemctl enable cri-o
 Kubernetes stores its data in [etcd](https://etcd.io/) - a Paxos-based highly
 available key-value store.
 
-Kubernetes is [able to run etcd as a static pod](https://blog.scottlowe.org/2020/04/02/setting-up-etcd-with-kubeadm-containerd-edition/), however this did not feel very
-nice and posed possible bootstrapping problems. etcd is probably the most
-critical piece of the cluster so deserved its own systemd unit.
+Kubernetes
+[can run etcd as a static pod](https://blog.scottlowe.org/2020/04/02/setting-up-etcd-with-kubeadm-containerd-edition/),
+however this did not feel right to me: etcd is probably the most critical piece
+of the cluster so deserved its own systemd unit.
 
 For CentOS etcd is available from
 [Openstack repos](https://docs.openstack.org/install-guide/environment-packages-rdo.html):
@@ -136,23 +137,22 @@ sudo dnf install centos-release-openstack-ussuri
 sudo dnf install etcd
 ```
 
-Default settings should work for a single-node cluster.
-To future-proof it a bit and make it easier to add more nodes in the future I've adjusted some settings.
+Default settings should work for a single-node cluster. Expansion to a few more
+nodes is possible via
+[static clustering](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/clustering.md#static).
 
-Let's make it more tolerable to my weak hardware - we'll do less heartbeats. I
-also created a skeleton for possible future expansion to 3 nodes via
-[static clustering](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/clustering.md#static)
-(192.168.0.54 is IPv4 address of my "server").
-
-So I have following /etc/etcd/etcd.conf:
+However I made a few adjustments to default config to ensure it behaves a little
+bit better in small cluster. So I have following /etc/etcd/etcd.conf:
 
 ```bash
 #[Member]
+# 192.168.0.54 is the ip address of my server.
 ETCD_LISTEN_PEER_URLS="http://localhost:2380,http://192.168.0.54:2380"
 ETCD_LISTEN_CLIENT_URLS="http://localhost:2379,http://192.168.0.54:2379"
 ETCD_NAME="krusty"
 # Do snapshots more frequently to reduce memory and disk usage.
 ETCD_SNAPSHOT_COUNT="5000" # Default is 100000
+
 # Lower heartbeat latency as we don't have a very fast hardware:
 # Do heartbeats every 1s and fail if heard no response for 5 seconds
 # In cluster setup this means it can take up to 6 seconds to detect machine
@@ -166,14 +166,15 @@ ETCD_ADVERTISE_CLIENT_URLS="http://localhost:2379,http://192.168.0.54:2379"
 ETCD_INITIAL_CLUSTER="krusty=http://192.168.0.54:2380,krusty=http://localhost:2380"
 ```
 
-And finally, let's start and enable etcd:
+To start and enable etcd:
 
 ```bash
 sudo systemctl start etcd
 sudo systemctl enable etcd
 ```
 
-Now, `etcdctl member list` should display our glorious single member.
+After doing that I was able to run `etcdctl member list` and see single-member
+etcd cluster.
 
 ## Control plane
 
