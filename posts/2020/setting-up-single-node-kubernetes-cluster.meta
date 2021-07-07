@@ -1,6 +1,7 @@
 .. title: Setting up single-node Kubernetes cluster
 .. slug: setting-up-single-node-kubernetes-cluster
-.. date: 2021-06-29 21:40:00 UTC
+.. date: 2020-07-29 23:00:00 UTC
+.. updated: 2021-06-29 21:40:00 UTC
 .. tags: kubernetes,etcd,calico
 .. link:
 .. description:
