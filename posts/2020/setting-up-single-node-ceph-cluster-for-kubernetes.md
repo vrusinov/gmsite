@@ -398,7 +398,8 @@ spec:
       size: 2
       requireSafeReplicaSize: true
   dataPools:
-    # failureDomain: osd protects from a single osd crash or single device failure but not from the whole node failure.
+    #  'failureDomain: osd' protects from a single osd crash or single device
+    # failure but not from the whole node failure.
     - failureDomain: osd
       replicated:
         size: 2
@@ -410,7 +411,9 @@ spec:
     activeStandby: false
 ```
 
-Now, it order to be able to use this in Ceph via PersistentVolumeClaim, storage class needed to be created also:
+Another thing that is required is a StorageClass. Without it, the filesystem
+would be created but it won't be possible to reference it via
+PersistentVolumeClaim.
 
 ```yaml
 # https://github.com/rook/rook/blob/master/Documentation/ceph-filesystem.md
