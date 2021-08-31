@@ -1,10 +1,15 @@
 # Donating with Liberapay
 
-Recently I've stumbled upon [Liberapay](liberapay.com).
+Recently I've stumbled upon [Liberapay](https://liberapay.com/).
 
-Liberapay is a non-profit crowdfunding platform. The most interesting thing is that Liberapay does not charge fee for donations. Instead, it relies on donations itself. So Liberapay [has account on Liberapay](https://en.liberapay.com/Liberapay/). Another big upside is that it appears to be [entirely open-source](https://github.com/liberapay).
+Liberapay is a non-profit crowdfunding platform. It does not charge any fees for
+donations. Instead it relies on donations itself: Liberapay
+[has an account on Liberapay](https://en.liberapay.com/Liberapay/), and you can
+donate to it the same way you would donate to any other user. Another big upside
+is that it appears to be [entirely open-source](https://github.com/liberapay).
 
-The biggest downside is that it does not appear to be very popular, so there is not all that many things to donate to there.
+The biggest downside is that it does not appear to be very popular, and UX is
+somewhat questionable. So there isn't a lot of projects and people to donate to.
 
 Still, I found a few things and set up a few tiny recurring donations.
 
@@ -29,6 +34,6 @@ Click my button, [give me some money](https://liberapay.com/rvs/donate). I don't
 
 I found following interesting (to me) projects there:
 
-* [Liberapay itself](https://en.liberapay.com/Liberapay/)
-* [Syncthing](https://en.liberapay.com/Syncthing/) - Open-Source p2p file synchronization tool. I did not set up donation in Liberapay since I already donate through other channels.
-* [LVFS](https://en.liberapay.com/LVFS/) - collaborative initiative to install firmware in Linux
+*   [Liberapay itself](https://en.liberapay.com/Liberapay/)
+*   [Syncthing](https://en.liberapay.com/Syncthing/) - Open-Source p2p file synchronization tool. I did not set up donation in Liberapay since I already donate through other channels.
+*   [LVFS](https://en.liberapay.com/LVFS/) - collaborative initiative to install firmware in Linux
