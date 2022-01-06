@@ -30,4 +30,7 @@ spec:
       restartPolicy: Never
 ```
 
-Docker file is based on example provided in tsunami's repo and lives in my ['sundry' repository](https://github.com/google/copr-sundry/tree/master/docker/tsunami-security-scanner).
+Dockerfile is based on the example provided in
+[tsunami's repo](https://github.com/google/tsunami-security-scanner) and lives
+in my
+['sundry' repository](https://github.com/google/copr-sundry/tree/master/docker/tsunami-security-scanner).

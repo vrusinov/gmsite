@@ -9,3 +9,4 @@ cache
 .doit.db.dir
 __pycache__
 output
+.vscode/
