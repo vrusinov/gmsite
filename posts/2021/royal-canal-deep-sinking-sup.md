@@ -1,6 +1,8 @@
 The weather was great this Monday - it was the hottest day of this year in Ireland (so far). Also, thanks to Memorial Day in USA, it was going to be a quiet day at work. So, I decided to take a day off and go paddle-boarding in Royal Canal in west Dublin. I did not find a lot of information online, so I'll write a report here.
 
-<img src="/posts/2021/deep_sinking_2.jpg">
+<a href="/posts/2021/deep_sinking_2_large.jpg">
+    <img src="/posts/2021/deep_sinking_2.jpg">
+</a>
 
 <!-- TEASER_END -->
 
