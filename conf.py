@@ -18,7 +18,7 @@ import time
 
 
 # Data about this site
-BLOG_AUTHOR = "Vladimir Rusinov"  # (translatable)
+BLOG_AUTHOR = "V Rusinov"  # (translatable)
 BLOG_TITLE = {
     'ru': "www.rusinov.ie",
     'en': 'www.rusinov.ie'
