@@ -474,8 +474,7 @@ HIDDEN_CATEGORIES = []
 # and displayed underneath the author list or index page’s title.
 # AUTHOR_PAGES_DESCRIPTIONS = {
 #    DEFAULT_LANG: {
-#        "Juanjo Conti": "Python coder and writer.",
-#        "Roberto Alsina": "Nikola father."
+#        "Name": "Python coder and writer.",
 #    },
 # }
 
