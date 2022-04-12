@@ -1,6 +1,7 @@
 Monit is a simple, lightweight, but useful and powerful enough monitoring solution for your servers.
 
 Monit can monitor:
+
 *   OS processes (presence, resources)
 *   files, directories and file system for changes (mtime, size and checksum
     changes)
