@@ -1,6 +1,5 @@
 Things to do:
 
-*   RSS feed per language.
 *   Check for broken links.
 *   Adjust 404 page.
 *   Check for common 404 errors.
