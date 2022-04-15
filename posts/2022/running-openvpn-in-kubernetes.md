@@ -117,11 +117,16 @@ up "/bin/sh /etc/openvpn/up.sh"
 
 ```sh
 #!/bin/sh
+
+set -e
+
 echo "1" > /proc/sys/net/ipv4/ip_forward
 iptables -t nat -A POSTROUTING -s 10.185.162.0/24 -o eth0 -j MASQUERADE
 ```
 
 The config and `up.sh` are put into `etc-openvpn` folder and therefore put into `etc-openvpn` Secret by the above script.
+
+In order for `iptables` command in `up.sh` to work, `ip_tables` module needs to be loaded on the *host*. I did this by running `modprobe ip_tables` on all of my Kubernetes hosts, and by putting "ip_tables" to `/etc/modules-load.d/iptables.conf`.
 
 ## Kubernetes deployment
 
