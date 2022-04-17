@@ -14,14 +14,14 @@
 
 {% macro html_translations(post) %}
     {% if post.translated_to|length > 1 %}
-        <div class="metadata posttranslations translations">
-            <h3 class="posttranslations-intro">{{ messages("Also available in:") }}</h3>
+        <p>
+            <span class="posttranslations-intro">{{ messages("Also available in:") }}</span>
             {% for langname in translations|sort %}
                 {% if langname != lang and post.is_translation_available(langname) %}
-                <p><a href="{{ post.permalink(langname) }}" rel="alternate" hreflang="{{ langname }}">{{ messages("LANGUAGE", langname) }}</a></p>
+                <a href="{{ post.permalink(langname) }}" rel="alternate" hreflang="{{ langname }}">{{ messages("LANGUAGE", langname) }}</a>
                 {% endif %}
             {% endfor %}
-        </div>
+        </p>
     {% endif %}
 {% endmacro %}
 
@@ -51,14 +51,16 @@
             {% endif %}
             </a>
             </p>
+            {#
             {% if not post.meta('nocomments') and site_has_comments %}
                 <p class="commentline">{{ comments.comment_link(post.permalink(), post._base_path) }}
             {% endif %}
+            #}
             {{ html_sourcelink() }}
             {% if post.meta('link') %}
                     <p class="linkline"><a href="{{ post.meta('link') }}">{{ messages("Original site") }}</a></p>
             {% endif %}
+            {{ html_translations(post) }}
         </div>
-        {{ html_translations(post) }}
     </header>
 {% endmacro %}

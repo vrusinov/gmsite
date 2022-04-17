@@ -14,7 +14,7 @@ MESSAGES = {
     "Authors": "Разработчики",
     "Categories": "Категории",
     "Comments": "Комментарии",
-    "LANGUAGE": "Русский",
+    "LANGUAGE": "Русский <img src=\"/assets/images/new_russia_flag.png\" width=\"16px\">",
     "Languages:": "Языки:",
     "More posts about %s": "Больше записей о %s",
     "Newer posts": "Новые записи",
