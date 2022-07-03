@@ -322,12 +322,11 @@ TAG_PAGES_ARE_INDEXES = False
 # }
 
 # Set special titles for tag pages. The default is "Posts about TAG".
-# TAG_TITLES = {
-#    DEFAULT_LANG: {
-#        "blogging": "Meta-posts about blogging",
-#        "open source": "Posts about open source software"
-#    },
-# }
+TAG_TITLES = {
+   DEFAULT_LANG: {
+       "ceph": "Posts about Ceph filesystem",
+   },
+}
 
 # If you do not want to display a tag publicly, you can mark it as hidden.
 # The tag will not be displayed on the tag list page and posts.
