@@ -1,4 +1,4 @@
-After setting up my shiny [single-node Kubernetes "cluster"](en/posts/2020/setting-up-single-node-kubernetes-cluster/) I wanted to do something useful with it. Many of the useful things require your useful data not to disappear, so I needed to figure out how to do that.
+After setting up my shiny [single-node Kubernetes "cluster"](/en/posts/2020/setting-up-single-node-kubernetes-cluster/) I wanted to do something useful with it. Many of the useful things require your useful data not to disappear, so I needed to figure out how to do that.
 
 In Kubernetes [storage is organized](https://kubernetes.io/docs/concepts/storage/) via Volumes. These Volumes can be attached to Pods via Volume Claims. There are two types of Volumes: regular ones and Persistent Volumes. Regular Volumes are ephemeral and destroyed together with Pods (e.g. when it crashes or rescheduled). These are of course less interesting than Persistent Volumes which as the name suggest survive Pod restarts.
 
