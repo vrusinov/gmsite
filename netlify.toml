@@ -115,4 +115,4 @@ force = true
 [build]
   base    = ""
   publish = "output"
-  command = "pip install 'Markdown=3.3.7' && nikola build"
+  command = "pip install 'Markdown==3.3.7' && nikola build"
