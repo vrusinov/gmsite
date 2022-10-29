@@ -1,6 +1,6 @@
 <img src="/posts/2022/flag_of_ukraine.svg" width="50%" align="right" style="margin: 0.3em;">
 
-I condone Russian invasion to Ukraine. I hope the war ends soon. I wish Ukrainians can take their country back and start rebuilding. I wish there was no more suffering.
+I condemn Russian invasion to Ukraine. I hope the war ends soon. I wish Ukrainians can take their country back and start rebuilding. I wish there was no more suffering.
 
 There is another, less bloody but still important war happening right now. The informational war between Putin and regular residents of Russia. It's been going on for a really long time but escalated dramatically in the last few weeks. [Thousands of people were arrested](https://www.bbc.com/news/world-europe-60640204) for participating in anti-war protests. Many, if not all independent news sources [were blocked](https://www.nytimes.com/2022/03/07/technology/russia-ukraine-internet-isolation.html) so that Putin can continue spreading lies through the government-controlled channels without facing any criticism. And the sad part is that Putin appears to be winning this war. Many Russians are now brainwashed. I've been watching for years how many of my acquaintances become angrier and more and more radicalized. Thanfully my close friends (those few who are still in Russia) were spared and still have their critical thinking intact. But for how long?
 
