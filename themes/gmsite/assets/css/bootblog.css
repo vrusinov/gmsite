@@ -240,6 +240,7 @@ article .metadata {
 .bootblog4-featured-text {
     overflow: auto;
 }
+
 /* extend the mobile appearance to `sm`, because otherwise weird things happen */
 @media (min-width: 576px) {
     .nbb-navbar-toggler {

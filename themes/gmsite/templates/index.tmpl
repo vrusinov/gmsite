@@ -28,6 +28,9 @@
     {% if page_links %}
         {{ pagination.page_navigation(current_page, page_links, prevlink, nextlink, prev_next_links_reversed) }}
     {% endif %}
+    {% if theme_config.get('sidebar') %}
+        <div class="well float-md-end"><aside>{{ theme_config.get('sidebar') }}</aside></div>
+    {% endif %}
     <div class="postindex">
         {% for post in posts %}
             <article class="h-entry post-{{ post.meta('type') }}" itemscope="itemscope" itemtype="http://schema.org/Article">

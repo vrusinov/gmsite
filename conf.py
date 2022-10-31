@@ -107,6 +107,25 @@ THEME = "gmsite"
 # Must be a HEX value.
 THEME_COLOR = '#5670d4'
 
+SIDEBAR_EN = """
+<h5>Friends</h5>
+
+<ul>
+    <li><a href="https://en.rmcreative.ru/">&lt;rmcreative&gt;</a></li>
+    <li><a href="https://flameeyes.blog/">Flameeyes</a></li>
+    <li><a href="https://tinystruggles.com/">Tiny struggles</a></li>
+    <li><a href="https://log.andvari.net/">Doc</a></li>
+</ul>
+"""
+
+SIDEBAR_RU = """
+<h5>Друзья</h5>
+
+<ul>
+    <li><a href="https://rmcreative.ru/">&lt;rmcreative&gt;</a></li>
+</ul>
+"""
+
 # Theme configuration. Fully theme-dependent. (translatable)
 # Examples below are for bootblog4.
 # bootblog4 supports: featured_large featured_small featured_on_mobile
@@ -128,7 +147,10 @@ THEME_CONFIG = {
         # Strip HTML from featured post text.
         'featured_strip_html': False,
         # Contents of the sidebar, If empty, the sidebar is not displayed.
-        'sidebar': ''
+        'sidebar': SIDEBAR_EN
+    },
+    'ru': {
+        'sidebar': SIDEBAR_RU,
     }
 }
 
