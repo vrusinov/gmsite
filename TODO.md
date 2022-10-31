@@ -25,3 +25,4 @@ Things to do:
 *   Publish tag_cloud_shortcode plugin
 *   Tag icons and colours, similar to [this](https://mdbootstrap.com/snippets/jquery/adamjakubowski/694459)
 *   Start using [tags plugin](https://plugins.getnikola.com/v7/tags/)
+*   Contents for longer posts, similar to http://louistiao.me/posts/how-i-customized-my-nikola-powered-site/
