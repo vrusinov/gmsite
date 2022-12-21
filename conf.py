@@ -16,6 +16,8 @@ Option (b) is used for settings that are different in different languages.
 
 import time
 
+from typing import List, Dict, Any, Callable
+
 
 # Data about this site
 BLOG_AUTHOR = "V Rusinov"  # (translatable)
@@ -429,7 +431,7 @@ CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 # If you do not want to display a category publicly, you can mark it as hidden.
 # The category will not be displayed on the category list page.
 # Category pages will still be generated.
-HIDDEN_CATEGORIES = []
+HIDDEN_CATEGORIES: List[str] = []
 
 # A list of dictionaries specifying categories which translate to each other.
 # Format: a list of dicts {language: translation, language2: translation2, …}
@@ -1360,10 +1362,10 @@ WARN_ABOUT_TAG_METADATA = False
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {
+GLOBAL_CONTEXT: Dict[str, Any] = {
 }
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be
 # rendered
-GLOBAL_CONTEXT_FILLER = []
+GLOBAL_CONTEXT_FILLER: List[Callable] = []
