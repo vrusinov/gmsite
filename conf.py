@@ -86,6 +86,7 @@ NAVIGATION_LINKS = {
     "en": (
         ("/en/archive.html", "Archives"),
         ("/en/tags/index.html", "Tags"),
+        ("/en/pages/recommended-reading-and-talks", "Recommendations"),
         ("/en/rss.xml", "RSS"),
     ),
     "ru": (
@@ -109,16 +110,7 @@ THEME = "gmsite"
 # Must be a HEX value.
 THEME_COLOR = '#5670d4'
 
-SIDEBAR_EN = """
-<h5>Friends</h5>
-
-<ul>
-    <li><a href="https://en.rmcreative.ru/">&lt;rmcreative&gt;</a></li>
-    <li><a href="https://flameeyes.blog/">Flameeyes</a></li>
-    <li><a href="https://tinystruggles.com/">Tiny struggles</a></li>
-    <li><a href="https://log.andvari.net/">Doc</a></li>
-</ul>
-"""
+SIDEBAR_EN = ""
 
 SIDEBAR_RU = """
 <h5>Друзья</h5>
@@ -149,7 +141,7 @@ THEME_CONFIG = {
         # Strip HTML from featured post text.
         'featured_strip_html': False,
         # Contents of the sidebar, If empty, the sidebar is not displayed.
-        'sidebar': SIDEBAR_EN
+        #'sidebar': SIDEBAR_EN
     },
     'ru': {
         'sidebar': SIDEBAR_RU,
