@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2020 Vladimir Rusinov
+# SPDX-FileCopyrightText: 2020-2023 Vladimir Rusinov
 #
-# SPDX-License-Identifier: CC-BY-SA-4.0
+# SPDX-License-Identifier: Apache-2.0
 
 cache
 .doit.db
@@ -10,3 +10,4 @@ cache
 __pycache__
 output
 .vscode/
+.hypothesis/
