@@ -29,4 +29,3 @@ function renderGallery(jsonContent, thumbnailSize) {
         container.appendChild(div);
     }
 }
-

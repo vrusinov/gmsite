@@ -1,4 +1,4 @@
-Things to do:
+TODO:
 
 *   Check for broken links.
 *   Adjust 404 page.
