@@ -75,7 +75,7 @@ spec:
                 name: remark42
                 key: AUTH_GITHUB_CSEC
           - name: ADMIN_SHARED_ID
-            value: "google_b182b5daa0004104b348d9bde762b1880ed9d98d"
+            value: "google_b182b5data0004104b348d9bde762b1880ed9d98d"
           - name: TIME_ZONE
             value: "Europe/Dublin"
         volumeMounts:
@@ -92,7 +92,7 @@ spec:
             cpu: "1"
             memory: "1Gi"
       securityContext:
-        # Has its own root priviledge drop
+        # Has its own root privilege drop
         #runAsUser: 1001
         #runAsGroup: 1001
         #fsGroup: 1001

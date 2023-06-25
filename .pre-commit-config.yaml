@@ -20,3 +20,9 @@ repos:
       rev: v0.0.275
       hooks:
           - id: ruff
+    - repo: https://github.com/crate-ci/typos
+      rev: v1.15.5
+      hooks:
+          - id: typos
+            # Do not attempt to fix automatically
+            args: []

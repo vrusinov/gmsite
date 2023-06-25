@@ -31,7 +31,7 @@ Once I got the first board running I was satisfied enough to get one more - this
 
 # Software
 
-The board behaves just like a normal X86 computer, the only noticable difference is that it has UEFI-only BIOS, so it is not possible to boot in legacy mode.
+The board behaves just like a normal X86 computer, the only noticeable difference is that it has UEFI-only BIOS, so it is not possible to boot in legacy mode.
 
 I was able to easily boot from USB and install CentOS 8 to the eMMC.
 
@@ -58,6 +58,6 @@ And in case I need more storage, I still have one M.2 slot left in lisa, and one
 # Future work
 
 *   I didn't extend Kubernetes cluster yet - apiserver and etcd are still singly-homed on krusty.
-*   My Ceph currently uses 2x replication. Although it is not reccomended and potentially unsafe, I'm reasonably satisfied with the trade-off. I may change it to 3x if the laptop fails and I replace it with Odyssey or similar board.
+*   My Ceph currently uses 2x replication. Although it is not recommended and potentially unsafe, I'm reasonably satisfied with the trade-off. I may change it to 3x if the laptop fails and I replace it with Odyssey or similar board.
 *   If/when HDDs fail I may switch entirely to M.2 SSDs - they take much less space and likely consume less power. I'm not a data hoarder so they don't need to be very large, thus should be relatively affordable.
 *   Currently I only use one of the Ethernet ports on Odysseys so they are limited to 1 Gbps. I may try to use bond both to get 2 Gbps if I notice poor performance.

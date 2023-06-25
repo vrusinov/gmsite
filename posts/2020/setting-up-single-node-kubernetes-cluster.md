@@ -156,7 +156,7 @@ ETCD_SNAPSHOT_COUNT="5000" # Default is 100000
 # Lower heartbeat latency as we don't have a very fast hardware:
 # Do heartbeats every 1s and fail if heard no response for 5 seconds
 # In cluster setup this means it can take up to 6 seconds to detect machine
-# failure and start doing someting about it.
+# failure and start doing something about it.
 ETCD_HEARTBEAT_INTERVAL="1000"
 ETCD_ELECTION_TIMEOUT="5000"
 
@@ -224,7 +224,7 @@ Now, the most interesting part - configuring control plane.
 ```bash
 # Configure control plane.
 # Adjust "advertiseAddress: 192.168.0.54" to address of your server
-# Adress etcd enpoints (http://192.168.0.54:2379) to address of your
+# Address etcd endpoints (http://192.168.0.54:2379) to address of your
 # etcd server(s).
 cat > /tmp/master-configuration.yaml <<EOF
 apiVersion: kubeadm.k8s.io/v1beta2

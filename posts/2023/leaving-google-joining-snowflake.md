@@ -6,7 +6,7 @@ This Friday was my last day in [Google](https://sre.google/). Tomorrow will be m
 
 # 10 years in Google Storage SRE
 
-I've spent all of my Google time in various Storage SRE teams in Ireland. It wasn't an intention, it sort of just happend. My Google story started in...
+I've spent all of my Google time in various Storage SRE teams in Ireland. It wasn't an intention, it sort of just happened. My Google story started in...
 
 ## May 2012 - younger me arrives to Dublin
 
@@ -36,7 +36,7 @@ However after a while there wasn't all that much for me to do. I failed another 
 
 ## Cloud SQL SRE
 
-I had some experience running PostgreSQL at previous job which came in handy: I launched Cloud Postgres. This lead to successfull promo.
+I had some experience running PostgreSQL at previous job which came in handy: I launched Cloud Postgres. This lead to successful promo.
 
 This is also where I got a chance to be part of public Cloud business and got to work with open-source stuff, and I liked it.
 

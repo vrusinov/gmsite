@@ -7,7 +7,7 @@
 div.admonition, div.attention, div.caution, div.danger, div.error,
 div.hint, div.important, div.note, div.tip, div.warning, div.sidebar,
 div.system-message {
-/* stolen from Boostrap 4 (.card) */
+/* stolen from Bootstrap 4 (.card) */
   margin-bottom: 2rem;
   position: relative;
   display: -webkit-box;
@@ -28,7 +28,7 @@ div.system-message {
 }
 
 div.attention, div.caution, div.danger, div.error, div.warning {
-  /* stolen from Boostrap 3 (.border-danger) */
+  /* stolen from Bootstrap 3 (.border-danger) */
   border-color: #dc3545!important;
 }
 
@@ -48,7 +48,7 @@ div.tip p.admonition-title, div.sidebar p.sidebar-title,
 div.attention p.admonition-title, div.caution p.admonition-title,
 div.danger p.admonition-title, div.error p.admonition-title,
 div.warning p.admonition-title, div.system-message p.system-message-title {
-/* stolen from Boostrap 4 (.card .card-header) */
+/* stolen from Bootstrap 4 (.card .card-header) */
   font-weight: 400;
   font-size: 1.25rem;
   padding: .75rem 1.25rem;
@@ -60,7 +60,7 @@ div.warning p.admonition-title, div.system-message p.system-message-title {
 div.attention p.admonition-title, div.caution p.admonition-title,
 div.danger p.admonition-title, div.error p.admonition-title,
 div.warning p.admonition-title, div.system-message p.system-message-title {
-  /* stolen from Boostrap 4 (.card .card-header .bg-danger) */
+  /* stolen from Bootstrap 4 (.card .card-header .bg-danger) */
   background-color: #dc3545;
   color: white;
 }

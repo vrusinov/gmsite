@@ -1,4 +1,4 @@
-The following posts and talks moved me in one way or another, so I reccomend you read/watch them too.
+The following posts and talks moved me in one way or another, so I recommend you read/watch them too.
 
 * [Incident Analysis: How *Learning* is Different Than *Fixing* - John Allspaw](https://youtu.be/Zw_ASI-rk1s) - 2020 video. A few points resonated with me:
     *  Severity of the incident has nothing to do with how difficult and interesting it was
@@ -11,7 +11,7 @@ The following posts and talks moved me in one way or another, so I reccomend you
     * Who cares!
 * [KNOW YOUR “ONE JOB” AND DO IT FIRST](https://charity.wtf/2021/03/07/know-your-one-job-and-do-it-first/) and [follow-up](https://charity.wtf/2021/03/09/know-your-one-job-continued/)
 
-# Other blogs I reccomend
+# Other blogs I recommend
 
 * [&lt;rmcreative&gt;](https://en.rmcreative.ru/)
 * [Flameeyes](https://flameeyes.blog/)
