@@ -26,3 +26,7 @@ repos:
           - id: typos
             # Do not attempt to fix automatically
             args: []
+    - repo: https://github.com/pycqa/isort
+      rev: 5.12.0
+      hooks:
+        - id: isort
