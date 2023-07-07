@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright © 2012-2013 Roberto Alsina and others.
+# Copyright © 2023 Vladimir Rusinov
 
 # Permission is hereby granted, free of charge, to any
 # person obtaining a copy of this software and associated
@@ -24,14 +25,9 @@
 # OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import json
-import os
 import dataclasses
 
-import lxml
-
 from nikola.plugin_categories import SignalHandler
-from nikola.utils import LocaleBorg
 
 # Max & min size adjustment, in em
 MAX_SIZE = 10
