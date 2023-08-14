@@ -2,3 +2,6 @@
 # In posts/2020/setting-up-single-node-kubernetes-cluster.md
 8b50eb5477ba4f40 = "8b50eb5477ba4f40"
 ca8ba34a8ff2b = "ca8ba34a8ff2b"
+
+[files]
+extend-exclude = ["themes/gmsite/assets/js/bootstrap.min.js"]
