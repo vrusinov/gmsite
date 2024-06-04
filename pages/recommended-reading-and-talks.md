@@ -12,6 +12,7 @@ The following posts and talks moved me in one way or another, so I recommend you
 * [KNOW YOUR “ONE JOB” AND DO IT FIRST](https://charity.wtf/2021/03/07/know-your-one-job-and-do-it-first/) and [follow-up](https://charity.wtf/2021/03/09/know-your-one-job-continued/)
 * [Prioritization is a Political Problem as Much as an Analytical Problem](https://www.mironov.com/pri-politics/).
     * Prioritization is more than an analytical/intellectual exercise.  It's an organizational challenge with natural disagreements among stakeholders.
+* [Why the fuck are we templating yaml?](https://leebriggs.co.uk/blog/2019/02/07/why-are-we-templating-yaml)
 
 # Other blogs I recommend
 
