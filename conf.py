@@ -15,9 +15,7 @@ Option (b) is used for settings that are different in different languages.
 """
 
 import time
-
-from typing import List, Dict, Any, Callable
-
+from typing import Any, Callable, Dict, List
 
 # Data about this site
 BLOG_AUTHOR = "V Rusinov"  # (translatable)
@@ -212,7 +210,7 @@ FORCE_ISO8601 = False
 # Used by babel.dates, CLDR style:
 # http://cldr.unicode.org/translation/date-time
 # You can also use 'full', 'long', 'medium', or 'short'
-DATE_FORMAT = 'yyyy-MM-dd'
+DATE_FORMAT = 'd MMM yyyy'
 
 # Date format used to display post dates, if local dates are used.
 # (translatable)
@@ -226,7 +224,7 @@ DATE_FORMAT = 'yyyy-MM-dd'
 # 2 = using a string like “2 days ago”
 #
 # Your theme must support it, Bootstrap already does.
-DATE_FANCINESS = 2
+DATE_FANCINESS = 0
 
 # Customize the locale/region used for a language.
 # For example, to use British instead of US English: LOCALES = {'en': 'en_GB'}
