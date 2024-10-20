@@ -18,7 +18,7 @@ import time
 from typing import Any, Callable, Dict, List
 
 # Data about this site
-BLOG_AUTHOR = "V Rusinov"  # (translatable)
+BLOG_AUTHOR = "Vladimir Rusinov"  # (translatable)
 BLOG_TITLE = {
     'ru': "www.rusinov.ie",
     'en': 'www.rusinov.ie'

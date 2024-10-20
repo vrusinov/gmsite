@@ -1,6 +1,7 @@
 {#  -*- coding: utf-8 -*- #}
 {#
   SPDX-FileCopyrightText: Getnikola authors https://github.com/getnikola/nikola
+  SPDX-FileCopyrightText: 2024 Vladimir Rusinov
   SPDX-License-Identifier: MIT
 #}
 {% import 'index_helper.tmpl' as helper with context %}
@@ -37,13 +38,6 @@
             <header>
                 <h1 class="p-name entry-title"><a href="{{ post.permalink() }}" class="u-url">{{ post.title()|e }}</a></h1>
                 <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                    {% if author_pages_generated %}
-                        <a href="{{ _link('author', post.author()) }}">{{ post.author()|e }}</a>
-                    {% else %}
-                        {{ post.author()|e }}
-                    {% endif %}
-                    </span></p>
             <p class="dateline">
             <a href="{{ post.permalink() }}" rel="bookmark">
             <time class="published dt-published" datetime="{{ post.formatted_date('webiso') }}" itemprop="datePublished" title="{{ post.formatted_date(date_format)|e }}">{{ post.formatted_date(date_format)|e }}</time>
