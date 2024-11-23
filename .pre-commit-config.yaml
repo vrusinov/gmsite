@@ -9,14 +9,6 @@ repos:
           - id: check-yaml
           - id: check-added-large-files
             args: ['--maxkb=16966']
-    - repo: local
-      hooks:
-          # TODO: split into native hooks
-          - id: presubmit-sh
-            name: presubmit-sh
-            entry: bash presubmit.sh
-            language: system
-            always_run: true
     - repo: https://github.com/astral-sh/ruff-pre-commit
       rev: v0.0.275
       hooks:
