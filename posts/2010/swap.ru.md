@@ -1,3 +1,10 @@
+<!--
+SPDX-FileCopyrightText: 2020 Linux Gazette
+SPDX-FileCopyrightText: 2020 Vladimir Rusinov
+
+SPDX-License-Identifier: OPL-1.0
+-->
+
 Стандартные консольные утилиты Linux не показывают количество памяти процесса выгруженой в подкачку (swapped out).<br><br>Однако есть достаточно простой способ узнать это. Все что для нужно - взять идентификатор процесса (PID) и просмотреть файл smaps относящийся к этому процессу:
 
 ```bash
