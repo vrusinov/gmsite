@@ -1,6 +1,7 @@
 {#  -*- coding: utf-8 -*- #}
 {#
   SPDX-FileCopyrightText: Getnikola authors https://github.com/getnikola/nikola
+  SPDX-FileCopyrightText: 2025 Vladimir Rusinov
   SPDX-License-Identifier: MIT
 #}
 {% extends 'list_post.tmpl' %}
@@ -25,9 +26,6 @@
             {% endfor %}
         </ul>
         {% endif %}
-        <div class="metadata">
-            {{ feeds_translations.feed_link(tag, kind=kind) }}
-        </div>
         {{ feeds_translations.translation_link(kind) }}
     </header>
     {% if posts %}
