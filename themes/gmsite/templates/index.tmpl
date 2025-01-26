@@ -1,7 +1,7 @@
 {#  -*- coding: utf-8 -*- #}
 {#
   SPDX-FileCopyrightText: Getnikola authors https://github.com/getnikola/nikola
-  SPDX-FileCopyrightText: 2024 Vladimir Rusinov
+  SPDX-FileCopyrightText: 2024-2025 Vladimir Rusinov
   SPDX-License-Identifier: MIT
 #}
 {% import 'index_helper.tmpl' as helper with context %}
@@ -47,9 +47,6 @@
             {% endif %}
             </a>
             </p>
-                    {% if not post.meta('nocomments') and site_has_comments %}
-                        <p class="commentline">{{ comments.comment_link(post.permalink(), post._base_path) }}
-                    {% endif %}
                 </div>
             </header>
             {% if index_teasers %}
