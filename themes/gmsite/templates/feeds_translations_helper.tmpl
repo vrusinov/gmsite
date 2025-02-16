@@ -1,6 +1,7 @@
 {#  -*- coding: utf-8 -*- #}
 {#
   SPDX-FileCopyrightText: Getnikola authors https://github.com/getnikola/nikola
+  SPDX-FileCopyrightText: 2025 Vladimir Rusinov
   SPDX-License-Identifier: MIT
 #}
 
@@ -119,10 +120,6 @@
 {% macro translation_link(kind) %}
     {% if has_other_languages and other_languages %}
         <div class="translationslist translations">
-            <h3 class="translationslist-intro">{{ messages("Also available in:") }}</h3>
-        {% for language, classification, name in other_languages %}
-            <p>{{ _html_translation_link(classification, kind, language, name) }}</p>
-        {% endfor %}
         </div>
     {% endif %}
 {% endmacro %}
