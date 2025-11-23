@@ -75,7 +75,10 @@ spec:
                 name: remark42
                 key: AUTH_GITHUB_CSEC
           - name: ADMIN_SHARED_ID
-            value: "google_b182b5data0004104b348d9bde762b1880ed9d98d"
+            valueFrom:
+              secretKeyRef:
+                name: remark42
+                key: ADMIN_SHARED_ID
           - name: TIME_ZONE
             value: "Europe/Dublin"
         volumeMounts:
@@ -128,8 +131,7 @@ spec:
       port: 8080
       targetPort: 8080
 ---
-# TODO: switch to networking.k8s.io/v1
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: remark42-ingress
@@ -139,18 +141,20 @@ metadata:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   tls:
-  - hosts:
-    - comments.rusinov.ie
-    secretName: comments-tls
+    - hosts:
+        - comments.rusinov.ie
+      secretName: comments-tls
   rules:
-  - host: "comments.rusinov.ie"
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          serviceName: remark42-web
-          servicePort: 8080
+    - host: comments.rusinov.ie
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: remark42-web
+                port:
+                  number: 8080
 ```
 
 You'd also need another manifest for secrets. It can look something like this:
@@ -162,11 +166,12 @@ metadata:
   name: remark42
   namespace: gmsite
 stringData:
-  SECRET: <changeme>
-  AUTH_GOOGLE_CID: <changeme>.apps.googleusercontent.com
-  AUTH_GOOGLE_CSEC: <changeme>
-  AUTH_GITHUB_CID: <changeme>
-  AUTH_GITHUB_CSEC: <changeme>
+  SECRET: "<change-me>"
+  ADMIN_SHARED_ID: "<change-me>"
+  AUTH_GOOGLE_CID: "<change-me>.apps.googleusercontent.com"
+  AUTH_GOOGLE_CSEC: "<change-me>"
+  AUTH_GITHUB_CID: "<change-me>"
+  AUTH_GITHUB_CSEC: "<change-me>"
 ```
 
 For https certificate I used the [guide published by Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-with-cert-manager-on-digitalocean-kubernetes) with minimal adjustments.
