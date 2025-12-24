@@ -14,6 +14,7 @@ The following posts and talks moved me in one way or another, so I recommend you
     * Prioritization is more than an analytical/intellectual exercise.  It's an organizational challenge with natural disagreements among stakeholders.
 * [Why the fuck are we templating yaml?](https://leebriggs.co.uk/blog/2019/02/07/why-are-we-templating-yaml)
 * [Excuse me, is there a problem?](https://longform.asmartbear.com/problem/) - why companies fail despite identifying a real problem and building a product that solves that problem
+* [Thank you for being annoying](https://www.experimental-history.com/p/thank-you-for-being-annoying) - "happiness isn’t a full belly, it’s a belly that’s being filled"
 
 # Other blogs I recommend
 
@@ -22,3 +23,4 @@ The following posts and talks moved me in one way or another, so I recommend you
 * [Tiny struggles](https://tinystruggles.com/)
 * [Doc](https://log.andvari.net/)
 * [CHARITY.WTF](https://charity.wtf/)
+* [Experimental History](https://www.experimental-history.com/)
