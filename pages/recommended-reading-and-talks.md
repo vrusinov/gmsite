@@ -15,8 +15,11 @@ The following posts and talks moved me in one way or another, so I recommend you
 * [Why the fuck are we templating yaml?](https://leebriggs.co.uk/blog/2019/02/07/why-are-we-templating-yaml)
 * [Excuse me, is there a problem?](https://longform.asmartbear.com/problem/) - why companies fail despite identifying a real problem and building a product that solves that problem
 * [Thank you for being annoying](https://www.experimental-history.com/p/thank-you-for-being-annoying) - "happiness isn’t a full belly, it’s a belly that’s being filled"
+* [Face it: you're a crazy person](https://www.experimental-history.com/p/face-it-youre-a-crazy-person)
+  * "when people match their crazy to the right outlet, they become terrifyingly powerful"
+  * "find the job that’s crazy in the same way that you are crazy"
 
-# Other blogs I recommend
+# Blogs I recommend
 
 * [&lt;rmcreative&gt;](https://en.rmcreative.ru/)
 * [Flameeyes](https://flameeyes.blog/)
